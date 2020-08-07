@@ -3,14 +3,23 @@ import styled from 'styled-components';
 
 const StyledFooter = styled.footer`
    width: 100%;
+   padding: 10px 0;
+   font-family: ${({ theme }) => theme.fonts.secondary};
+   font-weight: 500;
    text-align: center;
-   font-size: 12px;
-   font-family: ${({ theme }) => theme.font.secondary};
+   letter-spacing: 0.5px;
+   text-transform: uppercase;
+   background-color: ${({ theme }) => theme.backgrounds.dark};
 
+   span {
+      color: ${({ theme }) => theme.colors.secondary};
+   }
 `;
 
 const Footer = () => (
-   <footer>
-   
-   </footer>
+   <StyledFooter>
+      <span>PIOTR CHMURA</span> © 2020 WSZELKIE PRAWA ZASTRZEŻONE
+   </StyledFooter>
 )
+
+export default Footer;

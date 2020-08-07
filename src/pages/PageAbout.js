@@ -1,14 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 import { backgrounds } from 'theme';
-import SectionTemplate from 'components/SectionTemplate/SectionTemplate';
-import H3 from 'components/ArticleHeader/ArticleHeader';
 import piotrChmuraImage from 'assets/images/PiotrChmuraImage.jpg';
+import cleanlinessIcon from 'assets/images/Cleanliness.svg';
+import efficiencyIcon from 'assets/images/Efficiency.svg';
+import responsivnessIcon from 'assets/images/Responsivness.svg';
 
-const StyledH3 = styled(H3)`
-   /* margin: 40px 0; */
-   /* grid-area: first / end; */
-`;
+import SectionTemplate from 'components/SectionTemplate/SectionTemplate';
+import H3 from 'components/Text/ArticleHeader';
+import FeatureCard from 'components/FeatureCard/FeatureCard';
 
 const StyledImage = styled.img`
    width: 350px;
@@ -66,6 +66,15 @@ const StyledFeaturesContainer = styled.div`
    text-align: center;
 `;
 
+const FeatureCardsContainer = styled.div`
+   display: grid;
+   width: 100%;
+   padding-top: 50px;
+   grid-template-columns: repeat(3, auto);
+   grid-template-rows: auto;
+   justify-content: space-between;
+`;
+
 
 const PageAbout = () => {
    return (
@@ -75,7 +84,7 @@ const PageAbout = () => {
       >
          <StyledContainer>
             <StyledTextContainer>
-               <StyledH3>Kim jestem?</StyledH3>
+               <H3>Kim jestem?</H3>
                <p><b>Cześć!</b> Nazywam się Piotr. Jestem junior frontend developerem, który aktualnie szuka pracy w Trójmieście lub Wrocławiu. Wkładam dużo wysiłku w to, co robię jednocześnie czerpiąc z tego ogromną satysfakcję. Swoją przygodę z web developmentem rozpocząłem trzy lata temu i chce ją kontynuować jeszcze długie lata.<br /><br />
 
                Swój wolny czas poświęcam na rozwój, ale też i gry komputerowe (najczęściej rytmiczne), słuchanie muzyki rockowej, układanie kostek rubika i uczenie się nowych rzeczy.</p>
@@ -90,9 +99,26 @@ const PageAbout = () => {
             </StyledImageContainer>
 
             <StyledFeaturesContainer>
-               <StyledH3>Czym się wyróżniam?</StyledH3>
+               <H3>Czym się wyróżniam?</H3>
 
-               
+               <FeatureCardsContainer>
+                  <FeatureCard
+                     icon={efficiencyIcon}
+                     heading="Wydajność"
+                     description="Dbam o prędkość ładowania strony i jej optymalizację pod wieloma względami."
+                  />
+                  <FeatureCard
+                     icon={cleanlinessIcon}
+                     heading="Przejrzystość"
+                     description="Odpowiednie rozmieszczenie informacji gra kluczową rolę w moich projektach."
+                  />
+                  <FeatureCard
+                     icon={responsivnessIcon}
+                     heading="Responsywność"
+                     description="Szablon działający na wszystkich urządzeniach moblinych to mój priorytet."
+                  />
+               </FeatureCardsContainer>
+
             </StyledFeaturesContainer>
          </StyledContainer>
       </SectionTemplate>

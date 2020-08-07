@@ -2,10 +2,11 @@ export const colors = {
    primary: '#FFFFFF',
    secondary: '#FFA800',
    dark: '#191A1D',
+   formPlaceholder: '#9E9E9E',
 }
 
 export const backgrounds = {
-   bright: '#303030',
+   light: '#303030',
    dark: '#191A1D',
    special: colors.secondary,
 }
@@ -22,5 +23,8 @@ export const theme = {
    fonts: {
       primary: "Segoe UI",
       secondary: "Rubik",
-   }
+   },
+   transitions: {
+      ease: "all .3s ease",
+   },
 }

@@ -11,6 +11,7 @@ const GlobalStyle = createGlobalStyle`
 
    html {
       font-size: 10px;
+      scroll-behavior: smooth;
    }
 
    body {
@@ -19,11 +20,30 @@ const GlobalStyle = createGlobalStyle`
       padding: 0;
       font-family: ${theme.fonts.primary}, sans-serif;
       color: ${theme.colors.primary};
-      background-color: ${theme.backgrounds.bright};
+      background-color: ${theme.backgrounds.light};
    }
 
    p {
       margin: 0;
+      font-size: 1.8rem;
+   }
+
+   h1, h3, h4, h5, h6 {
+      color: ${theme.colors.primary};
+   }
+
+   h2 {
+      color: ${theme.colors.secondary};
+   }
+
+   a {
+      text-decoration: none;
+      color: ${theme.colors.secondary};
+      transition: ${theme.transitions.ease};
+
+      &:hover {
+         color: ${theme.colors.primary};
+      }
    }
 `;
 

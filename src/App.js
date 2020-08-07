@@ -4,6 +4,7 @@ import GlobalStyle from './global';
 import { theme } from './theme';
 
 import Navigation from 'components/Navigation/Navigation';
+import Footer from 'components/Footer/Footer';
 import {
    PageHero,
    PageAbout,
@@ -24,6 +25,7 @@ function App() {
             <PageSkills />
             <PagePortfolio />
             <PageContact />
+            <Footer />
          </>
       </ThemeProvider>
   );

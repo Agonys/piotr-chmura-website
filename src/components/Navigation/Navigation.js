@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import logo from 'assets/images/Logo_flat.svg';
+import scrollTo from 'utils/scrollTo';
 
-const NavigationWrapper = styled.header`
+const NavigationContainer = styled.header`
    position: fixed;
    z-index: 10;
    width: 100%;
@@ -14,7 +15,7 @@ const NavigationWrapper = styled.header`
    align-items: center;
 `;
 
-const StyledImage = styled.a`
+const StyledLogo = styled.a`
    margin-left: 15px;
 `;
 
@@ -25,39 +26,38 @@ const StyledMenuList = styled.ul`
 `;
 
 const StyledMenuItem = styled.li`
-   color: ${({ theme }) => theme.colors.primary};
-   font-size: 1.6rem;
-   text-decoration: none;
+   position: relative;
    display: inline-block;
-   padding: 10px 0;
-   margin: 0 25px;
+   font-size: 1.6rem;
    font-weight: 500;
+   color: ${({ theme }) => theme.colors.primary};
    text-transform: uppercase;
    cursor: pointer;
-   transition: all .3s ease;
+   padding: 10px 15px;
+   margin: 0 10px;
+   transition: ${({ theme }) => theme.transitions.ease};
 
-   &:after {
+   &:before, &:after {
+      position: absolute;
+      bottom: 0;
       content: '';
-      display: block;
       width: 0;
       height: 2px;
-      position: relative;
-      top: 2px;
       background-color: ${({ theme }) => theme.colors.secondary};
-      transition: all .3s ease;
+      transition: ${({ theme }) => theme.transitions.ease};
    }
+
+   &:before { left: 50% }
+   &:after { right: 50% }
 
    &:hover {
       color: ${({ theme }) => theme.colors.secondary};
 
-      &:after {
-         width: 100%;
-      }
+      &:before, &:after { width: 50% }
    }
 
-   &:last-of-type {
-      margin-right: 50px;
-   }
+   &:last-of-type { margin-right: 50px }
+   &:focus { outline: none }
 
 `;
 
@@ -68,24 +68,50 @@ class Navigation extends Component {
       this.state = {}
    }
 
+   handleClick(e) {
+      e.preventDefault();
+      window.scrollTo({
+         top: 0
+      });
+   }
+
    render() {
 
       //scroll to element in site when user clicks on logo or "li".
       return (
-         <NavigationWrapper>
-            <StyledImage href="#">
+         <NavigationContainer id="navigation">
+            <StyledLogo href="#" onClick={this.handleClick}>
                <img src={logo} width="48" alt="Piotr Chmura Website" />
-            </StyledImage>
+            </StyledLogo>
             <nav>
                <StyledMenuList>
-                  <StyledMenuItem>Home</StyledMenuItem>
-                  <StyledMenuItem>O mnie</StyledMenuItem>
-                  <StyledMenuItem>Umiejętności</StyledMenuItem>
-                  <StyledMenuItem>Portfolio</StyledMenuItem>
-                  <StyledMenuItem>Kontakt</StyledMenuItem>
+                  <StyledMenuItem
+                     tabIndex={0}
+                     onClick={() => scrollTo("home")}>Home
+                  </StyledMenuItem>
+
+                  <StyledMenuItem
+                     tabIndex={0}
+                     onClick={() => scrollTo("about")}>O mnie
+                  </StyledMenuItem>
+
+                  <StyledMenuItem
+                     tabIndex={0}
+                     onClick={() => scrollTo("skills")}>Umiejętności
+                  </StyledMenuItem>
+
+                  <StyledMenuItem
+                     tabIndex={0}
+                     onClick={() => scrollTo("portfolio")}>Portfolio
+                  </StyledMenuItem>
+
+                  <StyledMenuItem
+                     tabIndex={0}
+                     onClick={() => scrollTo("contact")}>Kontakt
+                  </StyledMenuItem>
                </StyledMenuList>
             </nav>
-         </NavigationWrapper>
+         </NavigationContainer>
       )
    }
 }

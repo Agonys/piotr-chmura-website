@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import heroBackground from 'assets/images/HeroBackground.png';
-import H3 from 'components/ArticleHeader/ArticleHeader';
+import H3 from 'components/Text/ArticleHeader';
 import Button from 'components/Button/Button';
 import { colors } from 'theme';
 import logo from 'assets/images/Logo_shadows.svg';
@@ -20,7 +20,6 @@ const HeroWrapper = styled.section`
 const HeroLogo = styled.img`
    width: 600px;
    justify-self: center;
-   /* align-self: center; */
 `;
 
 const H1 = styled.h1`
@@ -47,7 +46,7 @@ const StyledButton = styled(Button)`
 
 const PageHero = () => {
    return (
-      <HeroWrapper>
+      <HeroWrapper id="home">
          <article>
             <H1>Cześć, jestem Piotr.</H1>
             <H3 accent thinner>Junior Front-end Developer</H3>
