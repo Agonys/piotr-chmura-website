@@ -9,7 +9,7 @@ import logo from 'assets/images/Logo_shadows.svg';
 
 const HeroWrapper = styled.section`
    background-image: url(${heroBackground});
-   width: 100vw;
+   width: 100%;
    height: 100vh;
    padding-top: 70px;
    display: grid;

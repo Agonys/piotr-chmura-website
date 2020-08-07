@@ -1,3 +1,4 @@
+import React from 'react';
 import styled from 'styled-components';
 
 const Button = styled.button`
@@ -6,7 +7,7 @@ const Button = styled.button`
    font-size: 1.6rem;
    text-transform: uppercase;
 
-   color: ${({ accent, theme }) => accent ? theme.colors.primary : theme.colors.secondary};
+   color: ${({ accent, theme }) => accent ? theme.colors.secondary : theme.colors.primary};
    border: 2px solid ${({ accent, theme }) => accent ? theme.colors.secondary : theme.colors.primary};
    border-radius: 3px;
    background-color: transparent;
