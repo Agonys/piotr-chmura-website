@@ -1,23 +1,21 @@
 import styled from 'styled-components';
 
 const SectionHeader = styled.h2`
-   margin: 0;
-   font-size: 4rem;
-   font-family: ${({ theme }) => theme.fonts.secondary};
-   color: ${({ isHeadingColorReversed, theme }) => isHeadingColorReversed ? theme.colors.dark : null};
+   font-size: 3rem;
+   color: ${({ isColorReversed, theme }) => isColorReversed ? theme.colors.black : theme.colors.special};
    font-weight: 500;
    text-align: center;
    text-transform: uppercase;
-
+   padding-bottom: 50px;
 
    &:before, &:after {
       content: '';
       position: relative;
-      top: -10px;
+      top: -8px;
       display: inline-block;
-      width: 50px;
-      height: 6px;
-      background-color: ${({ isHeadingColorReversed, theme }) => isHeadingColorReversed ? theme.colors.dark : theme.colors.secondary};
+      width: 40px;
+      height: 5px;
+      background-color: ${({ isColorReversed, theme }) => isColorReversed ? theme.colors.black : theme.colors.special};
    }
 
    &:before { margin-right: 20px; }

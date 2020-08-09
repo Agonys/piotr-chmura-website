@@ -1,25 +1,25 @@
+export const media = {
+   desktopNormal: "1440px",
+   desktopSmall: "1024px",
+   tablet: "768px",
+   mobile: "426px",
+}
+
 export const colors = {
-   primary: '#FFFFFF',
-   secondary: '#FFA800',
-   dark: '#191A1D',
-   formPlaceholder: '#9E9E9E',
+   white: '#FFFFFF',
+   special: '#FFA800',
+   black: '#191A1D',
 }
 
 export const backgrounds = {
    light: '#303030',
    dark: '#191A1D',
-   special: colors.secondary,
+   special: colors.special,
 }
 
 export const theme = {
    colors: colors,
    backgrounds: backgrounds,
-   sizes: {
-      desktopNormal: "1440px",
-      desktopSmall: "1024px",
-      tablet: "768px",
-      mobile: "420px",
-   },
    fonts: {
       primary: "Segoe UI",
       secondary: "Rubik",

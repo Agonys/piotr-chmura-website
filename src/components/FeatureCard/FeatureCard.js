@@ -2,12 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 import { backgrounds } from 'theme';
 import H4 from 'components/Text/H4';
-
+import PropTypes from 'prop-types';
 
 const CardContainer = styled.div`
    width: 330px;
    height: 260px;
    position: relative;
+   margin-bottom: 30px;
 `;
 
 const CardBackground = styled.div`
@@ -17,15 +18,15 @@ const CardBackground = styled.div`
    top: 50%;
    transform: translateY(-50%);
    z-index: -1;
-   background: ${backgrounds.special};
+   background: ${({ theme }) => theme.backgrounds.special};
 `;
 
 const CardBox = styled.div`
    display: flex;
    flex-direction: column;
    align-items: center;
-   justify-content: center;
    text-align: center;
+   justify-content: center;
 
    width: calc(100% - 20px);
    height: 100%;
@@ -36,6 +37,8 @@ const CardBox = styled.div`
 
    p {
       margin-top: 20px;
+      font-size: 2rem;
+      text-align: center;
    }
 `;
 
@@ -56,6 +59,18 @@ const FeatureCard = ({ icon, heading, description }) => {
          <CardBackground />
       </CardContainer>
    )
+}
+
+FeatureCard.defaultProps = {
+   icon: "",
+   heading: "cecha",
+   description: "krótki opis cechy",
+}
+
+FeatureCard.propTypes = {
+   icon: PropTypes.string.isRequired,
+   heading: PropTypes.string.isRequired,
+   description: PropTypes.string.isRequired,
 }
 
 export default FeatureCard;

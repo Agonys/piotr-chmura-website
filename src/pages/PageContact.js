@@ -1,10 +1,12 @@
 import React from 'react';
-import styled, {css} from 'styled-components';
-import SectionTemplate from 'components/SectionTemplate/SectionTemplate';
-import H3 from 'components/Text/ArticleHeader';
+import styled from 'styled-components';
+import SectionTemplate from 'templates/SectionTemplate';
+import H3 from 'components/Text/H3';
+import Widgets from 'components/Widgets/Widgets';
 
 const StyledH3 = styled(H3)`
    width: max-content;
+   padding: 0 0 20px;
    &:after {
       position: relative;
       top: 5px;
@@ -18,105 +20,94 @@ const StyledH3 = styled(H3)`
 
 const ContactContainer = styled.div`
    width: 100%;
-   padding: 50px 35px;
-   display: grid;
-   grid-template-columns: 1fr 1fr;
-   column-gap: 70px;
+   padding: 0 20px;
    background-color: ${({ theme }) => theme.backgrounds.dark};
+   display: flex;
+   flex-direction: column;
 `;
 
-const StyledForm = styled.form`
-   display: grid;
-   column-gap: 40px;
-   grid-template-columns: 1fr 1fr;
-   grid-template-areas:
-      "name email"
-      "subject subject"
-      "content content"
-      ". submit";
+const FormContainer = styled.div`
+   display: flex;
+   flex-direction: column;
+   padding: 30px 0 25px;
+
+   form {
+      display: flex;
+      flex-direction: column;
+   }
+
+   label {
+      position: relative;
+      margin: 18px 0;
+
+      input, textarea {
+         width: 100%;
+         height: 50px;
+         padding: 0 0 0 15px;
+         background-color: ${({ theme }) => theme.backgrounds.light};
+         border: 1px solid ${({ theme }) => theme.colors.white};
+         border-radius: 3px;
+         caret-color: ${({ theme }) => theme.colors.white};
+         font-size: 1.7rem;
+         color: ${({ theme }) => theme.colors.white};
+
+         &:focus { outline: none };
+
+         &:focus + span, &:valid + span {
+            top: -25px;
+            padding-left: 0;
+            font-size: 1.4rem;
+         }
+      }
+
+      textarea {
+         height: 150px;
+         resize: vertical;
+         padding: 15px 0 0 15px;
+      }
+
+      span {
+         position: absolute;
+         top: 15px;
+         left: 0;
+         padding-left: 15px;
+         font-family: ${({ theme }) => theme.fonts.primary};
+         font-size: 1.6rem;
+         color: ${({ theme }) => theme.colors.white};
+         transition: ${({ theme }) => theme.transitions.ease};
+         cursor: text;
+      }
+   }
+
+   input[type=submit] {
+      width: 50%;
+      text-align: center;
+      padding: 10px 20px;
+      border: 2px solid ${({ theme }) => theme.colors.special};
+      border-radius: 3px;
+      background-color: transparent;
+      align-self: flex-end;
+      color: ${({ theme }) => theme.colors.white};
+      transition: ${({ theme }) => theme.transitions.ease};
+      font-weight: bold;
+
+      &:active {
+         background-color: ${({ theme }) => theme.backgrounds.special};
+         color: ${({ theme }) => theme.colors.black};
+      }
+   }
 `;
 
-const FormInputContainer = styled.div`
-   margin-top: 40px;
-   position: relative;
-   display: inline-block;
-
-   &.form__name { grid-area: name }
-   &.form__email { grid-area: email }
-   &.form__subject { grid-area: subject }
-   &.form__content { grid-area: content }
-`;
-
-const StyledTextInput = styled(({tag, children, ...props}) => React.createElement(tag, props, children))`
+const MoreInfoContainer = styled.div`
+   display: flex;
+   flex-direction: column;
    width: 100%;
-   height: 50px;
-   padding: 0 0 0 15px;
-   border: 1px solid #8A8A8A;
-   border-radius: 3px;
-   background-color: ${({ theme }) => theme.backgrounds.light};
-   caret-color: ${({ theme }) => theme.colors.primary};
-   color: ${({ theme }) => theme.colors.primary};
-   font-size: 1.7rem;
-   font-family: ${({ theme }) => theme.fonts.secondary};
+   padding: 25px 0 30px;
 
-
-   height: ${({ tag }) => tag == 'textarea' && "150px"};
-   resize: ${({ tag }) => tag == 'textarea' && "vertical"};
-   min-height: ${({ tag }) => tag == 'textarea' && "50px"};
-
-   &:focus {
-      outline: none;
-   }
-
-   &:valid + label, &:focus + label {
-      top: -25px;
-      padding-left: 0;
-      font-size: 1.4rem;
-   }
-
-`;
-
-StyledTextInput.defaultProps = {
-   tag: 'input'
-}
-
-
-const StyledLabel = styled.label`
-   font-family: ${({ theme }) => theme.fonts.primary};
-   font-size: 1.6rem;
-   cursor: text;
-   position: absolute;
-   top: 15px;
-   left: 0;
-   padding-left: 15px;
-   transition: ${({ theme }) => theme.transitions.ease};
-   color: ${({ theme }) => theme.colors.formPlaceholder};
-`;
-
-const StyledSubmit = styled.input`
-   font-family: ${({ theme }) => theme.fonts.secondary};
-   font-size: 1.6rem;
-   font-weight: 500;
-   color: ${({ theme }) => theme.colors.primary};
-   padding: 12px 24px;
-   margin-top: 25px;
-   border: 2px solid ${({ theme }) => theme.colors.secondary};
-   border-radius: 3px;
-   background-color: transparent;
-   width: 200px;
-   text-align: center;
-   cursor: pointer;
-   grid-area: submit;
-   justify-self: end;
-   transition: ${({ theme }) => theme.transitions.ease};
-
-   &:hover {
-      background-color: ${({ theme }) => theme.backgrounds.special};
-      color: ${({ theme }) => theme.colors.dark};
+   p {
+      padding-top: 10px;
    }
 `;
-
-
 
 const PageContact = () => {
    return (
@@ -124,55 +115,37 @@ const PageContact = () => {
          id="contact"
          heading="Kontakt"
       >
-      <ContactContainer>
-         <div>
-            <StyledH3>Skontaktuj się ze mną</StyledH3>
-            <StyledForm>
-               <FormInputContainer className="form__name">
-                  <StyledTextInput
-                     type="text"
-                     id="form_name"
-                     required
-                  />
-                  <StyledLabel for="form_name">Imię i nazwisko</StyledLabel>
-               </FormInputContainer>
+         <ContactContainer>
+            <FormContainer>
+               <StyledH3>Napisz do mnie</StyledH3>
+               <form action="#" method="POST">
+                  <label>
+                     <input type="text" required/>
+                     <span>Imie</span>
+                  </label>
+                  <label>
+                     <input type="text" required/>
+                     <span>E-mail</span>
+                  </label>
+                  <label>
+                     <input type="text" required/>
+                     <span>Temat</span>
+                  </label>
+                  <label>
+                     <textarea required></textarea>
+                     <span>Treść wiadomości</span>
+                  </label>
 
-               <FormInputContainer className="form__email">
-                  <StyledTextInput
-                     type="text"
-                     id="form_email"
-                     required
-                  />
-                  <StyledLabel for="form_email">E-mail</StyledLabel>
-               </FormInputContainer>
+                  <input type="submit" value="Wyślij wiadomość" />
+               </form>
+            </FormContainer>
 
-               <FormInputContainer className="form__subject">
-                  <StyledTextInput
-                     type="text"
-                     id="form_subject"
-                     required
-                  />
-                  <StyledLabel for="form_subject">Temat</StyledLabel>
-               </FormInputContainer>
-
-               <FormInputContainer className="form__content">
-                  <StyledTextInput
-                     tag="textarea"
-                     id="form_content"
-                     required
-                  />
-                  <StyledLabel for="form_content">Treść wiadomości</StyledLabel>
-               </FormInputContainer>
-
-               <StyledSubmit value="Wyślij wiadomość"/>
-
-            </StyledForm>
-         </div>
-
-         <div>
-            <StyledH3>Pozostańmy w kontakcie</StyledH3>
-         </div>
-      </ContactContainer>
+            <MoreInfoContainer>
+               <StyledH3>Pozostańmy w kontakcie</StyledH3>
+               <p>Jeżeli chcesz porozmawiać o jakiejkolwiek formie współpracy lub po prostu pozostać w kontakcie będzie mi niezmiernie miło i na pewno odpowiem na wiadomość. Możesz wypełnić formularz lub napisać wiadomość na jednym z poniższych portali.</p>
+               <Widgets />
+            </MoreInfoContainer>
+         </ContactContainer>
       </SectionTemplate>
    )
 }

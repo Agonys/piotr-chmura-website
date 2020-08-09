@@ -3,8 +3,6 @@ import { theme } from './theme';
 
 
 const GlobalStyle = createGlobalStyle`
-   @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap");
-
    *, *::before, *::after {
       box-sizing: border-box;
    }
@@ -19,32 +17,21 @@ const GlobalStyle = createGlobalStyle`
       margin: 0;
       padding: 0;
       font-family: ${theme.fonts.primary}, sans-serif;
-      color: ${theme.colors.primary};
+      color: ${theme.colors.white};
       background-color: ${theme.backgrounds.light};
    }
 
    p {
       margin: 0;
-      font-size: 1.8rem;
+      font-size: 1.6rem;
+      text-align: justify;
    }
 
-   h1, h3, h4, h5, h6 {
-      color: ${theme.colors.primary};
+   h1, h2, h3, h4, h5, h6 {
+      margin: 0;
+      font-family: ${theme.fonts.secondary};
    }
 
-   h2 {
-      color: ${theme.colors.secondary};
-   }
-
-   a {
-      text-decoration: none;
-      color: ${theme.colors.secondary};
-      transition: ${theme.transitions.ease};
-
-      &:hover {
-         color: ${theme.colors.primary};
-      }
-   }
 `;
 
 export default GlobalStyle;

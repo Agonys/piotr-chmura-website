@@ -1,62 +1,60 @@
 import React from 'react';
 import styled from 'styled-components';
 import heroBackground from 'assets/images/HeroBackground.png';
-import H3 from 'components/Text/ArticleHeader';
-import Button from 'components/Button/Button';
-import { colors } from 'theme';
-import logo from 'assets/images/Logo_shadows.svg';
+import ButtonFull from 'components/Buttons/ButtonFull';
+import PropTypes from 'prop-types';
 
-
-const HeroWrapper = styled.section`
-   background-image: url(${heroBackground});
-   width: 100%;
-   height: 100vh;
-   padding-top: 70px;
-   display: grid;
-   grid-template-columns: 1fr auto;
-   padding: 170px;
+const StyledButton = styled(ButtonFull)`
+   font-weight: 500;
+   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
 `;
 
-const HeroLogo = styled.img`
-   width: 600px;
-   justify-self: center;
+const HeroWrapper = styled.section`
+   padding: 30px;
+   width: 100%;
+   height: 100vh;
+   background-image: url(${heroBackground});
+   display: flex;
+   flex-flow: column nowrap;
+   justify-content: center;
+   align-items: center;
 `;
 
 const H1 = styled.h1`
-   padding-top: 125px;
-   z-index: 2;
    margin: 0;
-   font-weight: 400;
-   font-size: 7.6rem;
-   font-family: ${({ theme }) => theme.fonts.secondary};
+   font-size: 3.7rem;
+   font-family: ${({ theme }) => theme.fonts.special};
+   font-weight: normal;
+   align-self: center;
 `;
 
-const StyledButton = styled(Button)`
-   background-color: ${({ theme }) => theme.colors.secondary};
-   border: 0;
-   text-shadow: 1px 1px 2px rgba(0, 0, 0, .8);
-   letter-spacing: 0.7px;
-   margin-top: 40px;
-   padding: 12px 24px;
-   cursor: pointer;
-   font-weight: 500;
-   color: ${({ theme }) => theme.colors.primary};
+const H4 = styled.h4`
+   margin: 0;
+   font-size: 2.2rem;
+   font-family: ${({ theme }) => theme.fonts.special};
+   color: ${({ theme }) => theme.colors.special};
+   font-weight: normal;
+   align-self: center;
 `;
 
 
-const PageHero = () => {
+const PageHero = ({ id }) => {
    return (
-      <HeroWrapper id="home">
-         <article>
-            <H1>Cześć, jestem Piotr.</H1>
-            <H3 accent thinner>Junior Front-end Developer</H3>
-            <StyledButton>Moje projekty</StyledButton>
-         </article>
-         <HeroLogo
-            src={logo}
-            alt="Piotr Chmura Website"
-         />
+      <HeroWrapper id={id}>
+         <H1>Cześć, jestem Piotr.</H1>
+         <H4>Junior Front-end Developer</H4>
+         <StyledButton>Moje projekty</StyledButton>
       </HeroWrapper>
    )
 }
+
+PageHero.defaultProps = {
+   id: 'home'
+}
+
+PageHero.propTypes = {
+   id: PropTypes.string.isRequired
+}
+
+
 export default PageHero;

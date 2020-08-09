@@ -2,16 +2,14 @@ import React from 'react';
 import styled from 'styled-components';
 import icons from './icons';
 
-
 const IconContainer = styled.div`
    display: grid;
    width: 100%;
-   grid-template-columns: repeat(8, max-content);
-   row-gap: 50px;
+   grid-template-columns: repeat(3, max-content);
+   row-gap: 35px;
    justify-content: space-evenly;
    justify-items: center;
    padding-top: 30px;
-
    img {
       height: 64px;
    }
@@ -24,33 +22,21 @@ const ImageContainer = styled.figure`
    flex-direction: column;
    cursor: pointer;
 
-   &:hover {
-      img { filter: none }
-
-      figcaption {
-         top: 0;
-         opacity: 1;
-      }
-   }
-
    img {
       align-self: center;
       margin: 0 auto;
-      filter: grayscale(70%);
-      transition: ${({ theme }) => theme.transitions.ease};
       z-index: 2;
    }
-
    figcaption {
       position: relative;
-      top: -20px;
+      top: 0px;
       z-index: 1;
       text-align: center;
       font-size: 16px;
       font-weight: 500;
       font-family: ${({ theme }) => theme.fonts.secondary};
       padding-top: 7px;
-      opacity: 0;
+      opacity: 1;
       transition: ${({ theme }) => theme.transitions.ease};
    }
 `;
@@ -66,13 +52,13 @@ const IconsGallery = () => {
             <figcaption>{iconName}</figcaption>
          </ImageContainer>
       )
-   })
+   });
 
    return (
       <IconContainer>
          {generateIcons}
       </IconContainer>
-   );
+   )
 }
 
 export default IconsGallery;
