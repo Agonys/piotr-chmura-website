@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import NavList from './NavList';
-import { media } from 'theme';
+import { devices } from 'theme';
 
 const StyledBurger = styled.div`
    justify-self: end;
@@ -12,7 +12,7 @@ const StyledBurger = styled.div`
 
    z-index: 10;
 
-   @media(min-width: ${media.desktopSmall}) {
+   @media ${devices.laptop} {
       display: none;
    }
 

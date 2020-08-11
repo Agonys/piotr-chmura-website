@@ -1,8 +1,17 @@
-export const media = {
-   desktopNormal: "1440px",
-   desktopSmall: "1024px",
+const sizes = {
+   desktop: "1440px",
+   laptopM: "1200px",
+   laptop: "1024px",
    tablet: "768px",
-   mobile: "426px",
+   mobileL: "480px",
+}
+
+export const devices = {
+   mobileL: `(min-width: ${sizes.mobileL})`,
+   tablet: `(min-width: ${sizes.tablet})`,
+   laptop: `(min-width: ${sizes.laptop})`,
+   laptopM: `(min-width: ${sizes.laptopM})`,
+   desktop: `(min-width: ${sizes.desktop})`,
 }
 
 export const colors = {

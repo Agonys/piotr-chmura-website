@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import H5 from 'components/Text/H5';
 import Button from 'components/Buttons/ButtonHalf';
+import { devices } from 'theme';
 
 const StyledButton = styled(Button)`
    position: relative;
@@ -17,19 +18,24 @@ const StyledH5 = styled(H5)`
    opacity: 0;
    transition: ${({ theme }) => theme.transitions.ease};
    z-index: 2;
+   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+   padding: 50px 0 10px;
+   z-index: 1;
 `;
 
 const CardContainer = styled.div`
-   width: 320px;
-   height: 200px;
-   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-   margin: 25px 0;
    position: relative;
+   width: 100%;
+   max-width: 400px;
+   height: 200px;
+   margin: 25px auto;
    text-align: center;
-   z-index: 0;
    background-image: url(${({ image }) => image});
    background-size: cover;
-   background-position: center;
+   background-position: center top;
+   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+   border-radius: 3px;
+   z-index: 0;
 
    &:first-of-type { margin-top: 0 }
    &:last-of-type {margin-bottom: 0 }
@@ -45,9 +51,11 @@ const CardContainer = styled.div`
          bottom: 0;
       }
 
-      .overlay {
-         opacity: 1;
-      }
+      .overlay { opacity: 1 }
+   }
+
+   @media ${devices.tablet} {
+      margin: 0;
    }
 `;
 
@@ -60,6 +68,7 @@ const CardOverlay = styled.div`
    opacity: 0;
    transition: ${({ theme }) => theme.transitions.ease};
    background-color: rgba(0,0,0,0.7);
+   border-radius: 3px;
    z-index: -1;
 `;
 

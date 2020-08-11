@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { media } from 'theme';
+import { devices } from 'theme';
 import scrollTo from 'utils/scrollTo';
 
 const StyledUl = styled.ul`
@@ -32,9 +32,11 @@ const StyledUl = styled.ul`
          color: ${({ theme }) => theme.colors.special};
          outline: none;
       }
+
+      &:focus { outline: none }
    }
 
-   @media(min-width: ${media.desktopSmall}) {
+   @media ${devices.laptop} {
       position: relative;
       transform: none;
       padding: 0;

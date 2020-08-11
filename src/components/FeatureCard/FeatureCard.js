@@ -1,14 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
-import { backgrounds } from 'theme';
-import H4 from 'components/Text/H4';
+import H5 from 'components/Text/H5';
 import PropTypes from 'prop-types';
+import { devices, backgrounds } from 'theme';
 
 const CardContainer = styled.div`
-   width: 330px;
-   height: 260px;
+   width: 100%;
+   max-width: 340px;
+   height: 230px;
    position: relative;
    margin-bottom: 30px;
+
+   @media ${devices.tablet} {
+      margin-bottom: 0;
+      max-width: 320px;
+   }
 `;
 
 const CardBackground = styled.div`
@@ -37,7 +43,6 @@ const CardBox = styled.div`
 
    p {
       margin-top: 20px;
-      font-size: 2rem;
       text-align: center;
    }
 `;
@@ -53,7 +58,7 @@ const FeatureCard = ({ icon, heading, description }) => {
       <CardContainer>
          <CardBox>
             <CardIcon src={icon} />
-            <H4>{heading}</H4>
+            <H5>{heading}</H5>
             <p>{description}</p>
          </CardBox>
          <CardBackground />

@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import icons from './icons';
+import { devices } from 'theme';
 
 const IconContainer = styled.div`
    display: grid;
@@ -10,8 +11,26 @@ const IconContainer = styled.div`
    justify-content: space-evenly;
    justify-items: center;
    padding-top: 30px;
+
    img {
       height: 64px;
+   }
+
+   @media ${devices.mobileL} {
+      grid-template-columns: repeat(4, max-content);
+   }
+
+   @media ${devices.tablet} {
+      grid-template-columns: repeat(5, max-content);
+   }
+
+   @media ${devices.laptop} {
+      grid-template-columns: repeat(6, max-content);
+      row-gap: 20px;
+   }
+
+   @media ${devices.laptopM} {
+      grid-template-columns: repeat(8, max-content);
    }
 `;
 
@@ -32,12 +51,32 @@ const ImageContainer = styled.figure`
       top: 0px;
       z-index: 1;
       text-align: center;
-      font-size: 16px;
+      font-size: 14px;
       font-weight: 500;
       font-family: ${({ theme }) => theme.fonts.secondary};
-      padding-top: 7px;
+      padding-top: 10px;
       opacity: 1;
       transition: ${({ theme }) => theme.transitions.ease};
+   }
+
+   @media ${devices.laptop} {
+      img {
+         filter: grayscale(70%);
+      }
+
+      figcaption {
+         padding-top: 7px;
+         opacity: 0;
+         top: -30px;
+      }
+
+      &:hover {
+         img { filter: none }
+         figcaption {
+            top: 0;
+            opacity: 1;
+         }
+      }
    }
 `;
 

@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import SectionTemplate from 'templates/SectionTemplate';
 import H3 from 'components/Text/H3';
 import Widgets from 'components/Widgets/Widgets';
+import { devices } from 'theme';
 
 const StyledH3 = styled(H3)`
    width: max-content;
@@ -20,20 +21,42 @@ const StyledH3 = styled(H3)`
 
 const ContactContainer = styled.div`
    width: 100%;
-   padding: 0 20px;
    background-color: ${({ theme }) => theme.backgrounds.dark};
    display: flex;
    flex-direction: column;
+
+   @media ${devices.laptop} {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+   }
 `;
 
 const FormContainer = styled.div`
    display: flex;
    flex-direction: column;
-   padding: 30px 0 25px;
+   padding: 25px 25px 30px 25px;
 
    form {
       display: flex;
       flex-direction: column;
+
+      @media ${devices.tablet} {
+         display: grid;
+         grid-template-columns: 1fr 1fr;
+         column-gap: 20px;
+
+         > label {
+            grid-column: 1/3;
+
+            &:first-of-type { grid-column: 1/2 }
+            &:nth-of-type(2) { grid-column: 2/3 }
+         }
+
+         > input {
+            grid-column: 1/3;
+            justify-self: end;
+         }
+      }
    }
 
    label {
@@ -43,7 +66,7 @@ const FormContainer = styled.div`
       input, textarea {
          width: 100%;
          height: 50px;
-         padding: 0 0 0 15px;
+         padding: 0 15px;
          background-color: ${({ theme }) => theme.backgrounds.light};
          border: 1px solid ${({ theme }) => theme.colors.white};
          border-radius: 3px;
@@ -61,7 +84,7 @@ const FormContainer = styled.div`
       }
 
       textarea {
-         height: 150px;
+         min-height: 150px;
          resize: vertical;
          padding: 15px 0 0 15px;
       }
@@ -80,7 +103,7 @@ const FormContainer = styled.div`
    }
 
    input[type=submit] {
-      width: 50%;
+      width: max-content;
       text-align: center;
       padding: 10px 20px;
       border: 2px solid ${({ theme }) => theme.colors.special};
@@ -96,16 +119,24 @@ const FormContainer = styled.div`
          color: ${({ theme }) => theme.colors.black};
       }
    }
+
+   @media ${devices.desktop} {
+      padding: 40px;
+   }
 `;
 
 const MoreInfoContainer = styled.div`
    display: flex;
    flex-direction: column;
    width: 100%;
-   padding: 25px 0 30px;
+   padding: 25px 35px 30px 25px;
 
    p {
       padding-top: 10px;
+   }
+
+   @media ${devices.desktop} {
+      padding: 40px;
    }
 `;
 
@@ -141,7 +172,7 @@ const PageContact = () => {
             </FormContainer>
 
             <MoreInfoContainer>
-               <StyledH3>Pozostańmy w kontakcie</StyledH3>
+               <StyledH3>Zostańmy w kontakcie</StyledH3>
                <p>Jeżeli chcesz porozmawiać o jakiejkolwiek formie współpracy lub po prostu pozostać w kontakcie będzie mi niezmiernie miło i na pewno odpowiem na wiadomość. Możesz wypełnić formularz lub napisać wiadomość na jednym z poniższych portali.</p>
                <Widgets />
             </MoreInfoContainer>

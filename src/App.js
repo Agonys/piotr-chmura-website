@@ -5,6 +5,7 @@ import { theme } from './theme';
 import Navigation from 'components/Navigation/Navigation';
 import Footer from 'components/Footer/Footer';
 import Modal from 'components/Modal/Modal';
+import DarkOverlay from 'components/DarkOverlay/DarkOverlay';
 
 import {
    PageHero,
@@ -13,6 +14,7 @@ import {
    PagePortfolio,
    PageContact,
 } from 'pages';
+
 
 export default class App extends React.Component {
    constructor(props) {
@@ -56,7 +58,8 @@ export default class App extends React.Component {
                <Modal
                   isModalOpen={this.state.isModalOpen}
                   modalData={this.state.modalData}
-                  closeModal={this.closeModal} />
+                  closeModal={this.closeModal}
+               />
 
                <PageHero />
                <PageAbout />

@@ -17,6 +17,7 @@ const ButtonFull = styled.button`
    border: 0;
    border-radius: 3px;
    box-shadow: 0 4px 4px rgba(0, 0, 0, .25);
+   cursor: pointer;
 `;
 
 

@@ -2,16 +2,21 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import SectionHeader from 'components/Text/SectionHeader';
+import { devices } from 'theme';
 
 const SectionContainer = styled.section`
    padding: 70px 20px;
-   width: 100%;
    background-color: ${({ backgroundColor }) => backgroundColor};
    display: flex;
    flex-direction: column;
    align-items: center;
    position: relative;
    z-index: 1;
+
+   @media ${devices.tablet} {
+      padding: 70px 30px;
+   }
+
 `;
 
 const SectionBackground = styled.div`
@@ -26,6 +31,17 @@ const SectionBackground = styled.div`
    z-index: -1;
 `;
 
+const InformationRow = styled.div`
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   width: 100%;
+
+   @media ${devices.laptop} {
+      max-width: 1200px;
+   }
+`;
+
 const SectionTemplate = ({ id, children, backgroundColor, backgroundImage, isColorReversed, heading }) => {
    return (
       <SectionContainer
@@ -33,9 +49,11 @@ const SectionTemplate = ({ id, children, backgroundColor, backgroundImage, isCol
          backgroundColor={backgroundColor}
          backgroundImage={backgroundImage}
       >
-         <SectionHeader isColorReversed={isColorReversed}>{heading}</SectionHeader>
-         {children}
-         {backgroundImage && <SectionBackground backgroundImage={backgroundImage} />}
+         <InformationRow>
+            <SectionHeader isColorReversed={isColorReversed}>{heading}</SectionHeader>
+            {children}
+            {backgroundImage && <SectionBackground backgroundImage={backgroundImage} />}
+         </InformationRow>
       </SectionContainer>
    )
 }

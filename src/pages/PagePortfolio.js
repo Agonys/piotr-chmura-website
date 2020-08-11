@@ -3,19 +3,32 @@ import styled from 'styled-components';
 import SectionTemplate from 'templates/SectionTemplate';
 import ProjectCard from 'components/ProjectCard/ProjectCard';
 import backgroundCover from 'assets/images/Background_cover.png';
-import { backgrounds } from 'theme';
+import { backgrounds, devices } from 'theme';
 import icons from 'components/IconsGallery/icons';
 
-import bloodstoneCalculator from 'assets/images/projects/bloodstone_calculator.jpg';
-import bloodstoneWiki from 'assets/images/projects/bloodstone_wiki.jpg';
-import bloodstoneDiscord from 'assets/images/projects/discord.jpg';
-import willaAnna from 'assets/images/projects/willa_anna.jpg';
-import deftoapartments from 'assets/images/projects/deftoapartments.jpg';
-import piotrChmura from 'assets/images/projects/piotr_chmura.jpg';
+import bloodstoneCalculator from 'assets/images/projects/bloodstone_calculator.webp';
+import bloodstoneWiki from 'assets/images/projects/bloodstone_wiki.webp';
+import bloodstoneDiscord from 'assets/images/projects/discord.webp';
+import willaAnna from 'assets/images/projects/willa_anna.webp';
+import deftoapartments from 'assets/images/projects/deftoapartments.webp';
+import piotrChmura from 'assets/images/projects/piotr_chmura.webp';
 
 const ProjectContainer = styled.div`
    display: flex;
    flex-direction: column;
+   width: 100%;
+
+   @media ${devices.tablet} {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      justify-items: center;
+      row-gap: 15px;
+      column-gap: 15px;
+   }
+
+   @media ${devices.laptopM} {
+      grid-template-columns: 1fr 1fr 1fr;
+   }
 `;
 
 const PagePortfolio = ({ openModal }) => {
@@ -43,7 +56,7 @@ const PagePortfolio = ({ openModal }) => {
                description='Oficjalna strona "Leśniczówka Willa Anna" z lokalizacją w Szklarskiej porębie. Strona zaprojektowana w celu przedstawienia oferty apartamentów wraz z możliwością ich rezerwacji. Strona oparta o Zend Framework przygotowana na stażu w firmie LEMONPIXEL.'
                sourceCode=""
                preview="https://www.willaanna.pl/"
-               icons={[]}
+               icons={[ icons["PHP"], icons["JavaScript"] ]}
                openModal={openModal}
             />
 

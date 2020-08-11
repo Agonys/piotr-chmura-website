@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-import { theme } from './theme';
+import { devices, theme } from 'theme';
 
 
 const GlobalStyle = createGlobalStyle`
@@ -19,12 +19,33 @@ const GlobalStyle = createGlobalStyle`
       font-family: ${theme.fonts.primary}, sans-serif;
       color: ${theme.colors.white};
       background-color: ${theme.backgrounds.light};
+
+      &::-webkit-scrollbar {
+         width: 10px;
+         background-color: ${theme.backgrounds.light};
+         border: 1px solid ${theme.colors.black};
+      }
+
+      &::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      }
+
+      &::-webkit-scrollbar-thumb {
+         background-color: ${theme.colors.special};
+         border-radius: 5px;
+         box-shadow: inset 1px 0 6px rgba(0, 0, 0, 0.3);
+      }
    }
 
    p {
       margin: 0;
-      font-size: 1.6rem;
+      font-size: 1.7rem;
       text-align: justify;
+
+      @media ${devices.tablet} {
+         font-size: 1.8rem;
+      }
+
    }
 
    h1, h2, h3, h4, h5, h6 {

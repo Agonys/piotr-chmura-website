@@ -1,12 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 import Hamburger from './Hamburger';
+import scrollTo from 'utils/scrollTo';
 
 import logo from 'assets/images/Logo_flat.svg';
 
 const StyledLogo = styled.img`
    z-index: 10;
    width: 48px;
+   cursor: pointer;
 `;
 
 const StyledHeader = styled.header`
@@ -26,9 +28,15 @@ const StyledHeader = styled.header`
 
 const Navigation = () => {
 
+
+
    return (
       <StyledHeader id="navigation">
-         <StyledLogo src={logo} alt="Logo" />
+         <StyledLogo
+            src={logo}
+            alt="Logo"
+            onClick={() => scrollTo("home")}
+         />
          <Hamburger />
       </StyledHeader>
    )

@@ -1,17 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
-import H5 from 'components/Text/H5';
+import H4 from 'components/Text/H4';
 import Button from 'components/Buttons/ButtonFull';
+import { devices } from 'theme';
 
 const StyledButton = styled(Button)`
-   width: 160px;
+   max-width: 160px;
    padding: 10px 0;
-   margin: 0;
-`;
-
-const StyledH5 = styled(H5)`
-   padding: 10px 0;
-   text-align: center;
+   margin: 0 10px;
+   width: 45%;
 `;
 
 const StyledHr = styled.hr`
@@ -21,7 +18,7 @@ const StyledHr = styled.hr`
 
 const StyledImage = styled.div`
    background-image: url(${({ src }) => src});
-   background-position: center;
+   background-position: center top;
    background-size: cover;
    width: 100%;
    height: 250px;
@@ -34,18 +31,30 @@ const StyledLine = styled.div`
 `;
 
 const ModalContainer = styled.div`
-   height: 100vh;
+   height: ${({ isOpen }) => isOpen ? "100vh" : "0"};
    width: 100%;
    position: fixed;
    overflow: hidden;
    top: 0;
-   left: 0;
-   z-index: ${({ isOpen }) => isOpen ? 11 : -1};
+   z-index: ${({ isOpen }) => isOpen ? 12 : 12};
    transform: ${({ isOpen }) => isOpen ? 'scale(1)' : 'scale(0.8)'};
    opacity: ${({ isOpen }) => isOpen ? 1 : 0};
 
    background-color: ${({ theme }) => theme.backgrounds.light};
    transition: ${({ theme }) => theme.transitions.ease};
+
+   @media ${devices.tablet} {
+      height: ${({ isOpen }) => isOpen ? "auto" : "0"};
+   }
+
+   @media ${devices.laptop} {
+      max-width: 700px;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+
+      top: 40px;
+   }
 `;
 
 const DescriptionContainer = styled.div`
@@ -59,10 +68,21 @@ const DescriptionContainer = styled.div`
    }
 `;
 
+const TitleContainer = styled.div`
+   @media ${devices.laptopM} {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      div { margin-right: 0 }
+   }
+`;
+
 const IconContainer = styled.div`
    display: flex;
    width: max-content;
-   margin: 10px 0;
+   margin: 10px auto;
 
    img {
       width: 48px;
@@ -81,6 +101,10 @@ const ButtonContainer = styled.div`
       color: inherit;
       cursor: inherit;
       text-decoration: none;
+   }
+
+   @media ${devices.tablet} {
+      justify-content: center;
    }
 `;
 
@@ -114,6 +138,24 @@ const CloseModal = styled.div`
    }
 `;
 
+const DarkOverlay = styled.div`
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100vw;
+   height: 100vh;
+   background-color: rgba(0, 0, 0, 0.6);
+   display: none;
+   z-index: 10;
+
+   @media ${devices.tablet} {
+      display: ${({ isOpen }) => isOpen ? 'block' : null};
+   }
+`;
+
+
+
+
 const Modal = ({ isModalOpen, modalData, closeModal }) => {
    const { title, description, icons, sourceCode, preview, backgroundImage } = {...modalData};
 
@@ -124,12 +166,15 @@ const Modal = ({ isModalOpen, modalData, closeModal }) => {
       })
 
    return (
+      <>
       <ModalContainer isOpen={isModalOpen}>
          <StyledImage src={backgroundImage} />
          <StyledLine />
          <DescriptionContainer>
-            <StyledH5>{title}</StyledH5>
-            <IconContainer>{iconsList}</IconContainer>
+            <TitleContainer>
+               <H4>{title}</H4>
+               <IconContainer>{iconsList}</IconContainer>
+            </TitleContainer>
 
             <StyledHr />
 
@@ -144,7 +189,10 @@ const Modal = ({ isModalOpen, modalData, closeModal }) => {
                <div />
             </CloseModal>
          </DescriptionContainer>
+
       </ModalContainer>
+      <DarkOverlay isOpen={isModalOpen} />
+      </>
    )
 }
 
