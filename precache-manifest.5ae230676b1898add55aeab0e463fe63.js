@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "a4247dfaab84bdaefa4bd2b0e20ba506",
+    "revision": "abf2223f34f0739eb34a7de57bb9f8b6",
     "url": "/index.html"
   },
   {
-    "revision": "7fefea7bffcb90d384c8",
-    "url": "/static/js/2.6fea6707.chunk.js"
+    "revision": "a6422851298fc4dfcea8",
+    "url": "/static/js/2.88c0721a.chunk.js"
   },
   {
     "revision": "c64c486544348f10a6d6c716950bc223",
-    "url": "/static/js/2.6fea6707.chunk.js.LICENSE.txt"
+    "url": "/static/js/2.88c0721a.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "7d284e455fe089927dc8",
-    "url": "/static/js/main.b7d90afe.chunk.js"
+    "revision": "68f596b977bf9f8dbff8",
+    "url": "/static/js/main.42533f90.chunk.js"
   },
   {
     "revision": "7f92f8b3aae2a4a81f49",
@@ -32,24 +32,32 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/Efficiency.1b670243.svg"
   },
   {
-    "revision": "f92e1eddc67c1513aa42070e73ac1e72",
-    "url": "/static/media/Facebook.f92e1edd.svg"
+    "revision": "c25b196a7a877c378d805a20f84d130f",
+    "url": "/static/media/Facebook.c25b196a.svg"
   },
   {
-    "revision": "1a3eddc8ef65a20f01c5a5883ab90305",
-    "url": "/static/media/Github.1a3eddc8.svg"
+    "revision": "052f4685f8b0cefd6ce7398dc80ce540",
+    "url": "/static/media/Github.052f4685.svg"
   },
   {
     "revision": "3f2c32c0c38833e1a7f6adcaa704815b",
     "url": "/static/media/HeroBackground.3f2c32c0.png"
   },
   {
-    "revision": "319a1a5579095cbd238a216da2d85891",
-    "url": "/static/media/LinkedIn.319a1a55.svg"
+    "revision": "0c1dfd0bbb43913b7052b9a0fcd6118d",
+    "url": "/static/media/LinkedIn.0c1dfd0b.svg"
   },
   {
     "revision": "8bc5b4454174ff1df8491e7356a6765e",
     "url": "/static/media/Logo_flat.8bc5b445.svg"
+  },
+  {
+    "revision": "a551e79f7f3ca1e3e03654e707a0557c",
+    "url": "/static/media/Logo_shadows.a551e79f.svg"
+  },
+  {
+    "revision": "a3b395de0c6a1778fc76aee6a7802a09",
+    "url": "/static/media/PiotrChmuraImage.a3b395de.jpg"
   },
   {
     "revision": "c4938903192c013daf334288aa21cf11",
@@ -60,24 +68,24 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/atom.c7a680b0.svg"
   },
   {
-    "revision": "013ac52d07e794e4b3943529959aa1cf",
-    "url": "/static/media/bloodstone_calculator.013ac52d.jpg"
+    "revision": "a71223dcf46ebda400c33f220735d708",
+    "url": "/static/media/bloodstone_calculator.a71223dc.webp"
   },
   {
-    "revision": "bde252eebb62447b7f3422e5a8f870da",
-    "url": "/static/media/bloodstone_wiki.bde252ee.jpg"
+    "revision": "042389762ca7a6f9a48f2cc99beb4c6e",
+    "url": "/static/media/bloodstone_wiki.04238976.webp"
   },
   {
     "revision": "946049763a82e8df539a9a44b23837d8",
     "url": "/static/media/css3.94604976.svg"
   },
   {
-    "revision": "79110be42e09d15b851710c03c32196e",
-    "url": "/static/media/deftoapartments.79110be4.jpg"
+    "revision": "84da5ca258b0bb0b825d318f81cffb15",
+    "url": "/static/media/deftoapartments.84da5ca2.webp"
   },
   {
-    "revision": "92e3ddfead0ea9f6149ca18a7805a389",
-    "url": "/static/media/discord.92e3ddfe.jpg"
+    "revision": "e96984537c2f91ead524067eca2112d4",
+    "url": "/static/media/discord.e9698453.webp"
   },
   {
     "revision": "805052423abf5e37804e11b9f7fff41e",
@@ -124,8 +132,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/php.b9cd6f1b.svg"
   },
   {
-    "revision": "683c95f4a32adcd91a509c75fead791f",
-    "url": "/static/media/piotr_chmura.683c95f4.jpg"
+    "revision": "1889212a885e7db9d8e127207cc44e3e",
+    "url": "/static/media/piotr_chmura.1889212a.webp"
   },
   {
     "revision": "f0793d9f85eb3f0d1c702c14d236ba9e",
@@ -136,7 +144,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/sass.4e3c2a4c.svg"
   },
   {
-    "revision": "8d0e6e74d4f2668ea5cd8e65ef39fa0b",
-    "url": "/static/media/willa_anna.8d0e6e74.jpg"
+    "revision": "b713775bf4a851b65e3e7040eb0dec08",
+    "url": "/static/media/willa_anna.b713775b.webp"
   }
 ]);
