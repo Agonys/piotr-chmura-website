@@ -21,7 +21,7 @@ const StyledUl = styled.ul`
 
    li {
       font-size: 2.8rem;
-      font-weight: 500;
+      font-weight: 600;
       padding: 25px 0;
       text-transform: uppercase;
       position: relative;

@@ -3,7 +3,7 @@ import { devices } from 'theme';
 
 const H3 = styled.h3`
    font-weight: 500;
-   font-size: 2.6rem;
+   font-size: 2.2rem;
    padding: 30px 0;
    color: ${({ theme }) => theme.colors.white};
 

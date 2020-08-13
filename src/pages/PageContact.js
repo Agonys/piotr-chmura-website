@@ -8,6 +8,7 @@ import { devices } from 'theme';
 const StyledH3 = styled(H3)`
    width: max-content;
    padding: 0 0 20px;
+
    &:after {
       position: relative;
       top: 5px;
@@ -34,7 +35,7 @@ const ContactContainer = styled.div`
 const FormContainer = styled.div`
    display: flex;
    flex-direction: column;
-   padding: 25px 25px 30px 25px;
+   padding: 40px;
 
    form {
       display: flex;
@@ -75,7 +76,6 @@ const FormContainer = styled.div`
          color: ${({ theme }) => theme.colors.white};
 
          &:focus { outline: none };
-
          &:focus + span, &:valid + span {
             top: -25px;
             padding-left: 0;
@@ -113,15 +113,12 @@ const FormContainer = styled.div`
       color: ${({ theme }) => theme.colors.white};
       transition: ${({ theme }) => theme.transitions.ease};
       font-weight: bold;
+      cursor: pointer;
 
-      &:active {
+      &:active, &:hover {
          background-color: ${({ theme }) => theme.backgrounds.special};
          color: ${({ theme }) => theme.colors.black};
       }
-   }
-
-   @media ${devices.desktop} {
-      padding: 40px;
    }
 `;
 
@@ -129,15 +126,9 @@ const MoreInfoContainer = styled.div`
    display: flex;
    flex-direction: column;
    width: 100%;
-   padding: 25px 35px 30px 25px;
+   padding: 40px;
 
-   p {
-      padding-top: 10px;
-   }
-
-   @media ${devices.desktop} {
-      padding: 40px;
-   }
+   p { padding-top: 10px; }
 `;
 
 const PageContact = () => {
@@ -149,21 +140,24 @@ const PageContact = () => {
          <ContactContainer>
             <FormContainer>
                <StyledH3>Napisz do mnie</StyledH3>
-               <form action="#" method="POST">
+               <form
+                  action="https://formsubmit.co/c50100c0bb7e7c8d70eeb1daf5793fc1"
+                  method="POST"
+               >
                   <label>
-                     <input type="text" required/>
+                     <input type="text" name="name" required/>
                      <span>Imie</span>
                   </label>
                   <label>
-                     <input type="text" required/>
+                     <input type="email" name="email" required/>
                      <span>E-mail</span>
                   </label>
                   <label>
-                     <input type="text" required/>
+                     <input type="text" name="_subject" required/>
                      <span>Temat</span>
                   </label>
                   <label>
-                     <textarea required></textarea>
+                     <textarea name="message" required></textarea>
                      <span>Treść wiadomości</span>
                   </label>
 

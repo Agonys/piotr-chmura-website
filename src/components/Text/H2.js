@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { devices } from 'theme';
 
-const SectionHeader = styled.h2`
+const H2 = styled.h2`
    font-size: 2.8rem;
    color: ${({ isColorReversed, theme }) => isColorReversed ? theme.colors.black : theme.colors.special};
    font-weight: 500;
@@ -50,4 +50,4 @@ const SectionHeader = styled.h2`
    }
 `;
 
-export default SectionHeader;
+export default H2;

@@ -12,7 +12,7 @@ const WidgetsContainer = styled.div`
 
    img {
       padding: 9px;
-      margin: 5px;
+      margin: 0 10px;
       width: 48px;
       height: 48px;
       border: 2px solid ${({ theme }) => theme.colors.special};
@@ -27,9 +27,9 @@ const WidgetsContainer = styled.div`
 const Widgets = ({ color }) => {
    return (
       <WidgetsContainer>
-         <img src={linkedinIcon} alt="LinkedIn icon" />
-         <img src={githubIcon} alt="Github icon" />
-         <img src={facebookIcon} alt="Facebook icon" />
+         <a href="https://www.linkedin.com/in/piotr-chmura-2b150a1ab/" target="_blank" rel="noopener noreferrer"><img src={linkedinIcon} alt="LinkedIn icon" /></a>
+         <a href="https://github.com/Agonys" target="_blank" rel="noopener noreferrer"><img src={githubIcon} alt="Github icon" /></a>
+         <a href="https://www.facebook.com/Piotr.Agonys.Chmura/" target="_blank" rel="noopener noreferrer"><img src={facebookIcon} alt="Facebook icon" /></a>
       </WidgetsContainer>
    )
 }

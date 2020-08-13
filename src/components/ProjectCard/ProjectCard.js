@@ -10,6 +10,8 @@ const StyledButton = styled(Button)`
    bottom: -40px;
    opacity: 0;
    margin-top: 20px;
+   width: 110px;
+
 `;
 
 const StyledH5 = styled(H5)`
@@ -19,7 +21,6 @@ const StyledH5 = styled(H5)`
    transition: ${({ theme }) => theme.transitions.ease};
    z-index: 2;
    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-   padding: 50px 0 10px;
    z-index: 1;
 `;
 
@@ -29,6 +30,12 @@ const CardContainer = styled.div`
    max-width: 400px;
    height: 200px;
    margin: 25px auto;
+
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+
    text-align: center;
    background-image: url(${({ image }) => image});
    background-size: cover;
@@ -56,6 +63,10 @@ const CardContainer = styled.div`
 
    @media ${devices.tablet} {
       margin: 0;
+   }
+
+   @media ${devices.laptopM} {
+      height: 240px;
    }
 `;
 

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { devices } from 'theme';
 
 const H4 = styled.h4`
-   font-size: 2.2rem;
+   font-size: 2.1rem;
    align-self: center;
 
    @media ${devices.mobileL} {

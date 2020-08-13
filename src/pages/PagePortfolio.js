@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import SectionTemplate from 'templates/SectionTemplate';
 import ProjectCard from 'components/ProjectCard/ProjectCard';
-import backgroundCover from 'assets/images/Background_cover.png';
+import backgroundCover from 'assets/images/Background_cover.webp';
 import { backgrounds, devices } from 'theme';
 import icons from 'components/IconsGallery/icons';
 
@@ -46,7 +46,7 @@ const PagePortfolio = ({ openModal }) => {
                title="Bloodstone Looter"
                description='aplikacja stworzona dla społeczności Bloodstone Polska pozwalający na analizowanie danych z gry "Bloodstone: The Ancient Curse" dostarczonych przez graczy. Całość napisana w Node.js, Discord.js, MySQL oraz hostowana na Google Cloud Platform.'
                sourceCode="https://github.com/Agonys/dc_bloodstone_bot"
-               icons={[ icons["NodeJS"], icons["MySQL"] ]}
+               icons={[ icons["Node.js"], icons["MySQL"] ]}
                openModal={openModal}
             />
 

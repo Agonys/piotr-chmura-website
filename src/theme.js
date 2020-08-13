@@ -7,11 +7,11 @@ const sizes = {
 }
 
 export const devices = {
-   mobileL: `(min-width: ${sizes.mobileL})`,
-   tablet: `(min-width: ${sizes.tablet})`,
-   laptop: `(min-width: ${sizes.laptop})`,
-   laptopM: `(min-width: ${sizes.laptopM})`,
    desktop: `(min-width: ${sizes.desktop})`,
+   laptopM: `(min-width: ${sizes.laptopM})`,
+   laptop: `(min-width: ${sizes.laptop})`,
+   tablet: `(min-width: ${sizes.tablet})`,
+   mobileL: `(min-width: ${sizes.mobileL})`,
 }
 
 export const colors = {

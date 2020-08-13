@@ -21,7 +21,7 @@ const icons = {
    "React.js": react,
    "jQuery": jquery,
    "Sass": sass,
-   "NodeJS": nodejs,
+   "Node.js": nodejs,
    "Git": git,
    "PHP": php,
    "MySQL": mysql,

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import SectionHeader from 'components/Text/SectionHeader';
+import H2 from 'components/Text/H2';
 import { devices } from 'theme';
 
 const SectionContainer = styled.section`
@@ -50,7 +50,7 @@ const SectionTemplate = ({ id, children, backgroundColor, backgroundImage, isCol
          backgroundImage={backgroundImage}
       >
          <InformationRow>
-            <SectionHeader isColorReversed={isColorReversed}>{heading}</SectionHeader>
+            <H2 isColorReversed={isColorReversed}>{heading}</H2>
             {children}
             {backgroundImage && <SectionBackground backgroundImage={backgroundImage} />}
          </InformationRow>

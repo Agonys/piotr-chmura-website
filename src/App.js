@@ -1,11 +1,12 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import GlobalStyle from './global';
-import { theme } from './theme';
+import { Helmet } from 'react-helmet';
 import Navigation from 'components/Navigation/Navigation';
 import Footer from 'components/Footer/Footer';
 import Modal from 'components/Modal/Modal';
-import DarkOverlay from 'components/DarkOverlay/DarkOverlay';
+import { theme } from 'theme';
+import icon from 'assets/images/favicon.ico';
 
 import {
    PageHero,
@@ -53,6 +54,16 @@ export default class App extends React.Component {
       return (
          <ThemeProvider theme={theme}>
             <GlobalStyle />
+            <Helmet>
+               <title>Piotr Chmura | Junior Front-end Developer</title>
+               <meta name="description" content="Cześć! Nazywam się Piotr Chmura. Jestem junior front-end developerem i zajmuje się tworzeniem nowoczesnych i responsywnych stron internetowych." />
+               <link rel="icon" href={icon} />
+
+               <meta name="og:title" property="og:title" content="Piotr Chmura | Junior Front-end Developer" />
+               <meta property="og:description" content="Cześć! Nazywam się Piotr Chmura. Jestem junior front-end developerem i zajmuje się tworzeniem nowoczesnych i responsywnych stron internetowych." />
+
+               <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap" />
+            </Helmet>
             <>
                <Navigation />
                <Modal

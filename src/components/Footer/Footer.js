@@ -6,7 +6,7 @@ const StyledFooter = styled.footer`
    width: 100%;
    padding: 10px 0;
    font-size: 1rem;
-   font-weight: 500;
+   font-weight: 600;
    letter-spacing: 0.5px;
    text-transform: uppercase;
    text-align: center;
@@ -16,14 +16,7 @@ const StyledFooter = styled.footer`
       color: ${({ theme }) => theme.colors.special};
    }
 
-   @media ${devices.mobileL} {
-      font-size: 1.1rem;
-   }
-
-   @media ${devices.laptop} {
-      font-size: 1.2rem;
-   }
-
+   @media ${devices.mobileL} { font-size: 1.1rem }
 `;
 
 const Footer = () => {

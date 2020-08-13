@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import H4 from 'components/Text/H4';
 import Button from 'components/Buttons/ButtonFull';
 import { devices } from 'theme';
 
@@ -69,11 +68,23 @@ const DescriptionContainer = styled.div`
 `;
 
 const TitleContainer = styled.div`
+   text-align: center;
+
+   span {
+      font-size: 2rem;
+      font-weight: 600;
+
+      @media ${devices.mobileL} { font-size: 2.4rem }
+      @media ${devices.tablet} { font-size: 2.8rem }
+   }
+
+
    @media ${devices.laptopM} {
       width: 100%;
       display: flex;
       flex-direction: row;
       justify-content: space-between;
+      align-items: center;
 
       div { margin-right: 0 }
    }
@@ -94,18 +105,8 @@ const IconContainer = styled.div`
 const ButtonContainer = styled.div`
    display: flex;
    width: 100%;
-   justify-content: space-around;
+   justify-content: center;
    margin: 30px 0;
-
-   a {
-      color: inherit;
-      cursor: inherit;
-      text-decoration: none;
-   }
-
-   @media ${devices.tablet} {
-      justify-content: center;
-   }
 `;
 
 const CloseModal = styled.div`
@@ -113,10 +114,11 @@ const CloseModal = styled.div`
    border-radius: 50%;
    width: 56px;
    height: 56px;
-
+   cursor: pointer;
    display: flex;
    justify-content: center;
    flex-flow: column nowrap;
+   transition: ${({ theme }) => theme.transitions.ease};
 
    div {
       width: 40px;
@@ -124,8 +126,8 @@ const CloseModal = styled.div`
       background-color: white;
       transform-origin: 17px;
       align-self: center;
-
       transition: ${({ theme }) => theme.transitions.ease};
+
       border-radius: 5px;
 
       &:first-of-type {
@@ -134,6 +136,14 @@ const CloseModal = styled.div`
 
       &:last-of-type {
          transform: rotate(-45deg);
+      }
+   }
+
+   &:hover {
+      background-color: white;
+
+      div {
+         background-color: black;
       }
    }
 `;
@@ -153,9 +163,6 @@ const DarkOverlay = styled.div`
    }
 `;
 
-
-
-
 const Modal = ({ isModalOpen, modalData, closeModal }) => {
    const { title, description, icons, sourceCode, preview, backgroundImage } = {...modalData};
 
@@ -170,9 +177,10 @@ const Modal = ({ isModalOpen, modalData, closeModal }) => {
       <ModalContainer isOpen={isModalOpen}>
          <StyledImage src={backgroundImage} />
          <StyledLine />
+
          <DescriptionContainer>
             <TitleContainer>
-               <H4>{title}</H4>
+               <span>{title}</span>
                <IconContainer>{iconsList}</IconContainer>
             </TitleContainer>
 

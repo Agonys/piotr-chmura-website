@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-import { devices, theme } from 'theme';
+import { theme } from 'theme';
 
 
 const GlobalStyle = createGlobalStyle`
@@ -42,10 +42,6 @@ const GlobalStyle = createGlobalStyle`
       font-size: 1.7rem;
       text-align: justify;
 
-      @media ${devices.tablet} {
-         font-size: 1.8rem;
-      }
-
    }
 
    h1, h2, h3, h4, h5, h6 {
@@ -53,6 +49,15 @@ const GlobalStyle = createGlobalStyle`
       font-family: ${theme.fonts.secondary};
    }
 
+   textarea {
+      font-family: ${theme.fonts.primary};
+   }
+
+   a {
+      color: inherit;
+      cursor: pointer;
+      text-decoration: none;
+   }
 `;
 
 export default GlobalStyle;

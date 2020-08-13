@@ -16,22 +16,15 @@ const IconContainer = styled.div`
       height: 64px;
    }
 
-   @media ${devices.mobileL} {
-      grid-template-columns: repeat(4, max-content);
-   }
-
-   @media ${devices.tablet} {
-      grid-template-columns: repeat(5, max-content);
-   }
+   @media ${devices.mobileL} { grid-template-columns: repeat(4, max-content) }
+   @media ${devices.tablet} { grid-template-columns: repeat(5, max-content) }
 
    @media ${devices.laptop} {
       grid-template-columns: repeat(6, max-content);
       row-gap: 20px;
    }
 
-   @media ${devices.laptopM} {
-      grid-template-columns: repeat(8, max-content);
-   }
+   @media ${devices.laptopM} { grid-template-columns: repeat(8, max-content) }
 `;
 
 const ImageContainer = styled.figure`
@@ -39,12 +32,12 @@ const ImageContainer = styled.figure`
    margin: 0;
    display: flex;
    flex-direction: column;
-   cursor: pointer;
 
    img {
       align-self: center;
       margin: 0 auto;
       z-index: 2;
+      transition: ${({ theme }) => theme.transitions.ease};
    }
    figcaption {
       position: relative;
@@ -61,13 +54,13 @@ const ImageContainer = styled.figure`
 
    @media ${devices.laptop} {
       img {
-         filter: grayscale(70%);
+         filter: grayscale(50%);
       }
 
       figcaption {
          padding-top: 7px;
          opacity: 0;
-         top: -30px;
+         top: -20px;
       }
 
       &:hover {
@@ -87,7 +80,7 @@ const IconsGallery = () => {
       const iconImage = icon[1];
       return (
          <ImageContainer key={iconName}>
-            <img src={iconImage} alt={iconName} />
+            <img src={iconImage} alt={iconName} loading='lazy' />
             <figcaption>{iconName}</figcaption>
          </ImageContainer>
       )

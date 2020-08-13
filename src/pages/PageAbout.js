@@ -4,7 +4,7 @@ import SectionTemplate from 'templates/SectionTemplate';
 import H3 from 'components/Text/H3';
 import FeatureCard from 'components/FeatureCard/FeatureCard';
 
-import personImage from 'assets/images/PiotrChmuraImage.jpg';
+import personImage from 'assets/images/PiotrChmuraImage.webp';
 import efficiencyIcon from 'assets/images/Efficiency.svg';
 import cleanlinessIcon from 'assets/images/Cleanliness.svg';
 import responsivnessIcon from 'assets/images/Responsivness.svg';
@@ -113,7 +113,7 @@ const PageAbout = () => {
             </TextContainer>
 
             <ImageContainer>
-               <img src={personImage} alt="Piotr Chmura" />
+               <img src={personImage} alt="Piotr Chmura" loading="lazy" />
                <figcaption>
                   Piotr Chmura
                   <span>Junior Front-end Developer</span>
