@@ -4,11 +4,12 @@ import SectionTemplate from 'templates/SectionTemplate';
 import H3 from 'components/Text/H3';
 import FeatureCard from 'components/FeatureCard/FeatureCard';
 
-import personImage from 'assets/images/PiotrChmuraImage.webp';
+import personImage from 'assets/images/PiotrChmuraImage.jpg';
 import efficiencyIcon from 'assets/images/Efficiency.svg';
 import cleanlinessIcon from 'assets/images/Cleanliness.svg';
 import responsivnessIcon from 'assets/images/Responsivness.svg';
 import { devices } from 'theme';
+
 
 const P = styled.p`
    padding-bottom: 40px;
@@ -33,6 +34,7 @@ const DescriptionContainer = styled.div`
 
 const TextContainer = styled.div`
    text-align: center;
+   height: 100%;
 
    @media ${devices.tablet} {
       text-align: left;
@@ -42,6 +44,8 @@ const TextContainer = styled.div`
 const ImageContainer = styled.figure`
    align-items: center;
    display: none;
+   height: 100%;
+
    @media ${devices.tablet} {
       display: block;
       margin: 0;
@@ -101,46 +105,52 @@ const FeatureCardContainer = styled.div`
 const PageAbout = () => {
    return (
       <SectionTemplate
-         id="about"
-         heading="O mnie"
+      id="about"
+      heading="O mnie"
       >
-         <DescriptionContainer>
-            <TextContainer>
-               <H3>Kim jestem?</H3>
-               <P>Cześć! Nazywam się Piotr. Jestem junior frontend developerem, który aktualnie szuka pracy w Trójmieście lub Wrocławiu. Wkładam dużo wysiłku w to, co robię jednocześnie czerpiąc z tego ogromną satysfakcję. Swoją przygodę z web developmentem rozpocząłem trzy lata temu i chce ją kontynuować jeszcze długie lata.<br /><br />
+      <DescriptionContainer>
+         <TextContainer data-aos="fade-right">
+            <H3>Kim jestem?</H3>
+            <P>Cześć! Nazywam się Piotr. Jestem junior frontend developerem, który aktualnie szuka pracy w Trójmieście lub Wrocławiu. Wkładam dużo wysiłku w to, co robię jednocześnie czerpiąc z tego ogromną satysfakcję. Swoją przygodę z web developmentem rozpocząłem trzy lata temu i chce ją kontynuować jeszcze długie lata.<br /><br />
 
-               Swój wolny czas poświęcam na rozwój, ale też i gry komputerowe (najczęściej rytmiczne), słuchanie muzyki rockowej, układanie kostek rubika i uczenie się nowych rzeczy.</P>
-            </TextContainer>
+            Swój wolny czas poświęcam na rozwój, ale też i gry komputerowe (najczęściej rytmiczne), słuchanie muzyki rockowej, układanie kostek rubika i uczenie się nowych rzeczy.</P>
+         </TextContainer>
 
-            <ImageContainer>
-               <img src={personImage} alt="Piotr Chmura" loading="lazy" />
-               <figcaption>
-                  Piotr Chmura
-                  <span>Junior Front-end Developer</span>
-               </figcaption>
-            </ImageContainer>
+         <ImageContainer data-aos="fade-left">
+            <img src={personImage} alt="Piotr Chmura" loading="lazy" />
+            <figcaption>
+            Piotr Chmura
+            <span>Junior Front-end Developer</span>
+            </figcaption>
+         </ImageContainer>
+      </DescriptionContainer>
 
-         </DescriptionContainer>
-
-         <H3>Czym się wyróżniam?</H3>
-         <FeatureCardContainer>
-            <FeatureCard
-               icon={efficiencyIcon}
-               heading="Wydajność"
-               description="Dbam o prędkość ładowania strony i jej optymalizację pod wieloma względami."
-            />
-            <FeatureCard
-               icon={cleanlinessIcon}
-               heading="Przejrzystość"
-               description="Odpowiednie rozmieszczenie informacji gra kluczową rolę w moich projektach."
-            />
-            <FeatureCard
-               icon={responsivnessIcon}
-               heading="Responsywność"
-               description="Szablon działający na wszystkich urządzeniach moblinych to mój priorytet."
-            />
-         </FeatureCardContainer>
+      <H3 data-aos="fade-down">Czym się wyróżniam?</H3>
+      <FeatureCardContainer>
+         <FeatureCard
+            icon={efficiencyIcon}
+            heading="Wydajność"
+            description="Dbam o prędkość ładowania strony i jej optymalizację pod wieloma względami."
+            data_aos="fade-down"
+            data_aos_delay="200"
+         />
+         <FeatureCard
+            icon={cleanlinessIcon}
+            heading="Przejrzystość"
+            description="Odpowiednie rozmieszczenie informacji gra kluczową rolę w moich projektach."
+            data_aos="fade-down"
+            data_aos_delay="400"
+         />
+         <FeatureCard
+            icon={responsivnessIcon}
+            heading="Responsywność"
+            description="Szablon działający na wszystkich urządzeniach moblinych to mój priorytet."
+            data_aos="fade-down"
+            data_aos_delay="600"
+         />
+      </FeatureCardContainer>
       </SectionTemplate>
    )
 }
+
 export default PageAbout;

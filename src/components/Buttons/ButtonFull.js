@@ -5,14 +5,14 @@ const ButtonFull = styled.button`
    padding: 10px 20px;
    font-family: ${({ theme }) => theme.fonts.secondary};
    font-size: 1.6rem;
+   font-weight: 500;
    text-transform: uppercase;
    width: max-content;
+   color: ${({ theme }) => theme.colors.black};
 
    ${({ isInverted, theme }) => isInverted
-   ? `background-color: ${theme.colors.white};
-   color: ${theme.colors.black};`
-   : `background-color: ${theme.colors.special};
-   color: ${theme.colors.white};`};
+   ? `background-color: ${theme.colors.white}`
+   : `background-color: ${theme.colors.special}`};
 
    border: 0;
    border-radius: 3px;

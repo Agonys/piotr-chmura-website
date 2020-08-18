@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import H2 from 'components/Text/H2';
 import { devices } from 'theme';
 
+
 const SectionContainer = styled.section`
    padding: 70px 20px;
    background-color: ${({ backgroundColor }) => backgroundColor};
@@ -16,7 +17,6 @@ const SectionContainer = styled.section`
    @media ${devices.tablet} {
       padding: 70px 30px;
    }
-
 `;
 
 const SectionBackground = styled.div`
@@ -50,7 +50,10 @@ const SectionTemplate = ({ id, children, backgroundColor, backgroundImage, isCol
          backgroundImage={backgroundImage}
       >
          <InformationRow>
-            <H2 isColorReversed={isColorReversed}>{heading}</H2>
+            <H2
+               isColorReversed={isColorReversed}
+               data-aos="fade-down"
+            >{heading}</H2>
             {children}
             {backgroundImage && <SectionBackground backgroundImage={backgroundImage} />}
          </InformationRow>

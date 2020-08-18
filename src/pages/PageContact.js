@@ -69,19 +69,25 @@ const FormContainer = styled.div`
          height: 50px;
          padding: 0 15px;
          background-color: ${({ theme }) => theme.backgrounds.light};
-         border: 1px solid ${({ theme }) => theme.colors.white};
+         border: 0;
          border-radius: 3px;
          caret-color: ${({ theme }) => theme.colors.white};
          font-size: 1.7rem;
          color: ${({ theme }) => theme.colors.white};
+         transition: ${({ theme }) => theme.transitions.ease};
 
-         &:focus { outline: none };
+         &:focus {
+            outline: none;
+            border-bottom: 1px solid ${({ theme }) => theme.colors.special};
+         }
          &:focus + span, &:valid + span {
             top: -25px;
             padding-left: 0;
             font-size: 1.4rem;
          }
       }
+
+      textarea { transition: border .3s ease; }
 
       textarea {
          min-height: 150px;
@@ -137,7 +143,7 @@ const PageContact = () => {
          id="contact"
          heading="Kontakt"
       >
-         <ContactContainer>
+         <ContactContainer data-aos="fade-right">
             <FormContainer>
                <StyledH3>Napisz do mnie</StyledH3>
                <form
@@ -145,19 +151,19 @@ const PageContact = () => {
                   method="POST"
                >
                   <label>
-                     <input type="text" name="name" required/>
+                     <input type="text" name="name" required />
                      <span>Imie</span>
                   </label>
                   <label>
-                     <input type="email" name="email" required/>
+                     <input type="email" name="email" required />
                      <span>E-mail</span>
                   </label>
                   <label>
-                     <input type="text" name="_subject" required/>
+                     <input type="text" name="_subject" required />
                      <span>Temat</span>
                   </label>
                   <label>
-                     <textarea name="message" required></textarea>
+                     <textarea name="message" required />
                      <span>Treść wiadomości</span>
                   </label>
 

@@ -32,6 +32,7 @@ const ImageContainer = styled.figure`
    margin: 0;
    display: flex;
    flex-direction: column;
+   transition-delay: ${({ delay }) => `${delay}s`};
 
    img {
       align-self: center;
@@ -73,24 +74,27 @@ const ImageContainer = styled.figure`
    }
 `;
 
-const IconsGallery = () => {
+const IconsGallery = ({ aosAnchor }) => {
+   const aosDelay = 0.04;
 
-   const generateIcons = Object.entries(icons).map(icon => {
+   const iconsList = Object.entries(icons).map((icon, index) => {
       const iconName = icon[0];
       const iconImage = icon[1];
+
       return (
-         <ImageContainer key={iconName}>
+         <ImageContainer
+            delay={(aosDelay * (index+1)).toPrecision(3)}
+            key={iconName}
+            data-aos="fade-down"
+            data-aos-anchor={aosAnchor}
+         >
             <img src={iconImage} alt={iconName} loading='lazy' />
             <figcaption>{iconName}</figcaption>
          </ImageContainer>
       )
    });
 
-   return (
-      <IconContainer>
-         {generateIcons}
-      </IconContainer>
-   )
+   return <IconContainer>{iconsList}</IconContainer>
 }
 
 export default IconsGallery;

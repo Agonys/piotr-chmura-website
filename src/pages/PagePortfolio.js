@@ -2,16 +2,17 @@ import React from 'react';
 import styled from 'styled-components';
 import SectionTemplate from 'templates/SectionTemplate';
 import ProjectCard from 'components/ProjectCard/ProjectCard';
-import backgroundCover from 'assets/images/Background_cover.webp';
-import { backgrounds, devices } from 'theme';
 import icons from 'components/IconsGallery/icons';
+import { backgrounds, devices } from 'theme';
 
+import backgroundCover from 'assets/images/Background_cover.webp';
 import bloodstoneCalculator from 'assets/images/projects/bloodstone_calculator.webp';
 import bloodstoneWiki from 'assets/images/projects/bloodstone_wiki.webp';
 import bloodstoneDiscord from 'assets/images/projects/discord.webp';
 import willaAnna from 'assets/images/projects/willa_anna.webp';
 import deftoapartments from 'assets/images/projects/deftoapartments.webp';
 import piotrChmura from 'assets/images/projects/piotr_chmura.webp';
+
 
 const ProjectContainer = styled.div`
    display: flex;
@@ -32,6 +33,8 @@ const ProjectContainer = styled.div`
 `;
 
 const PagePortfolio = ({ openModal }) => {
+   const AOS_ANCHOR = "projectContainer__aosAnchor";
+
    return (
       <SectionTemplate
          id="portfolio"
@@ -40,7 +43,7 @@ const PagePortfolio = ({ openModal }) => {
          heading="Portfolio"
          isColorReversed
       >
-         <ProjectContainer>
+         <ProjectContainer className={AOS_ANCHOR}>
             <ProjectCard
                backgroundImage={bloodstoneDiscord}
                title="Bloodstone Looter"
@@ -48,6 +51,8 @@ const PagePortfolio = ({ openModal }) => {
                sourceCode="https://github.com/Agonys/dc_bloodstone_bot"
                icons={[ icons["Node.js"], icons["MySQL"] ]}
                openModal={openModal}
+               aosAnchor={`.${AOS_ANCHOR}`}
+               aosDelay={100}
             />
 
             <ProjectCard
@@ -58,6 +63,8 @@ const PagePortfolio = ({ openModal }) => {
                preview="https://www.willaanna.pl/"
                icons={[ icons["PHP"], icons["JavaScript"] ]}
                openModal={openModal}
+               aosAnchor={`.${AOS_ANCHOR}`}
+               aosDelay={200}
             />
 
             <ProjectCard
@@ -68,6 +75,8 @@ const PagePortfolio = ({ openModal }) => {
                preview="https://www.deftoapartments.com/"
                icons={[ icons["PHP"], icons["JavaScript"] ]}
                openModal={openModal}
+               aosAnchor={`.${AOS_ANCHOR}`}
+               aosDelay={300}
             />
 
             <ProjectCard
@@ -78,6 +87,8 @@ const PagePortfolio = ({ openModal }) => {
                preview="https://bloodstone.com.pl/"
                icons={[ icons["PHP"], icons["JavaScript"] ]}
                openModal={openModal}
+               aosAnchor={`.${AOS_ANCHOR}`}
+               aosDelay={400}
             />
 
             <ProjectCard
@@ -88,6 +99,8 @@ const PagePortfolio = ({ openModal }) => {
                preview="https://bloodstone.com.pl/calculator/"
                icons={[ icons["jQuery"], icons["Sass"], icons["Figma"] ]}
                openModal={openModal}
+               aosAnchor={`.${AOS_ANCHOR}`}
+               aosDelay={500}
             />
 
             <ProjectCard
@@ -98,15 +111,12 @@ const PagePortfolio = ({ openModal }) => {
                preview="https://piotr-chmura.pl/"
                icons={[ icons["React.js"], icons["Figma"] ]}
                openModal={openModal}
+               aosAnchor={`.${AOS_ANCHOR}`}
+               aosDelay={600}
             />
-
-
-
-
 
          </ProjectContainer>
       </SectionTemplate>
    )
-   // <div style={{width: '100px',height:'100px',backgroundColor:'blue',zIndex:3}} onClick={() => handleClick()}>content</div>
 }
 export default PagePortfolio;

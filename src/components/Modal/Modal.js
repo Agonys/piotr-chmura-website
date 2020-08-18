@@ -5,9 +5,10 @@ import { devices } from 'theme';
 
 const StyledButton = styled(Button)`
    max-width: 160px;
-   padding: 10px 0;
-   margin: 0 10px;
-   width: 45%;
+   padding: 10px 10px;
+   margin: 0px;
+   width: 150px;
+   font-size: 1.5rem;
 `;
 
 const StyledHr = styled.hr`
@@ -64,6 +65,7 @@ const DescriptionContainer = styled.div`
 
    p {
       margin-top: 15px;
+      font-size: 1.6rem;
    }
 `;
 
@@ -107,6 +109,10 @@ const ButtonContainer = styled.div`
    width: 100%;
    justify-content: center;
    margin: 30px 0;
+
+   a {
+      margin: 0 10px;
+   }
 `;
 
 const CloseModal = styled.div`
@@ -188,8 +194,8 @@ const Modal = ({ isModalOpen, modalData, closeModal }) => {
 
             <p>{description}</p>
             <ButtonContainer>
-               {sourceCode && <StyledButton isInverted><a href={sourceCode} target="_blank" rel="noopener noreferrer">Kod źródłowy</a></StyledButton>}
-               {preview && <StyledButton><a href={preview} target="_blank" rel="noopener noreferrer">podgląd</a></StyledButton>}
+               {sourceCode && <a href={sourceCode} target="_blank" rel="noopener noreferrer"><StyledButton isInverted>Kod źródłowy</StyledButton></a>}
+               {preview && <a href={preview} target="_blank" rel="noopener noreferrer"><StyledButton>podgląd</StyledButton></a>}
             </ButtonContainer>
 
             <CloseModal onClick={closeModal}>

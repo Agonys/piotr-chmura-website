@@ -53,18 +53,19 @@ const CardIcon = styled.img`
    margin-bottom: 10px;
 `;
 
-const FeatureCard = ({ icon, heading, description }) => {
-   return (
-      <CardContainer>
-         <CardBox>
-            <CardIcon src={icon} />
-            <H5>{heading}</H5>
-            <p>{description}</p>
-         </CardBox>
-         <CardBackground />
-      </CardContainer>
-   )
-}
+const FeatureCard = ({ icon, heading, description, data_aos, data_aos_delay }) => (
+   <CardContainer
+      data-aos={data_aos}
+      data-aos-delay={data_aos_delay}
+   >
+      <CardBox>
+         <CardIcon src={icon} alt="icon"/>
+         <H5>{heading}</H5>
+         <p>{description}</p>
+      </CardBox>
+      <CardBackground />
+   </CardContainer>
+)
 
 FeatureCard.defaultProps = {
    icon: "",

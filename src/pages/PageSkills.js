@@ -4,14 +4,16 @@ import IconsGallery from 'components/IconsGallery/IconsGallery';
 import { backgrounds } from 'theme';
 
 const PageSkills = () => {
+   const AOS_ANCHOR = "paragraph__aosAnchor";
+
    return (
       <SectionTemplate
          id="skills"
          heading="Umiejętności"
          backgroundColor={backgrounds.dark}
       >
-         <p>W swoich projektach wykorzystuję:</p>
-         <IconsGallery />
+         <p data-aos="fade-down" className={AOS_ANCHOR}>W swoich projektach wykorzystuję:</p>
+         <IconsGallery aosAnchor={`.${AOS_ANCHOR}`} />
       </SectionTemplate>
    )
 }

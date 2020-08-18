@@ -1,6 +1,9 @@
 import { createGlobalStyle } from 'styled-components';
 import { theme } from 'theme';
+import rubikMedium from 'assets/fonts/Rubik-Medium.woff2';
+import rubikRegular from 'assets/fonts/Rubik-Regular.woff2';
 
+const AOS_DISTANCE = "200px";
 
 const GlobalStyle = createGlobalStyle`
    *, *::before, *::after {
@@ -21,19 +24,19 @@ const GlobalStyle = createGlobalStyle`
       background-color: ${theme.backgrounds.light};
 
       &::-webkit-scrollbar {
-         width: 10px;
+         width: 12px;
          background-color: ${theme.backgrounds.light};
          border: 1px solid ${theme.colors.black};
       }
 
       &::-webkit-scrollbar-track {
-        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+         box-shadow: inset 2px 0 6px rgba(0, 0, 0, 0.4);
       }
 
       &::-webkit-scrollbar-thumb {
          background-color: ${theme.colors.special};
          border-radius: 5px;
-         box-shadow: inset 1px 0 6px rgba(0, 0, 0, 0.3);
+         box-shadow: inset 2px 0 6px rgba(0, 0, 0, 0.3);
       }
    }
 
@@ -57,6 +60,18 @@ const GlobalStyle = createGlobalStyle`
       color: inherit;
       cursor: pointer;
       text-decoration: none;
+   }
+
+   [data-aos='fade-right'] {
+     transform: translateX(-${AOS_DISTANCE});
+   }
+
+   [data-aos='fade-left'] {
+     transform: translateX(${AOS_DISTANCE});
+   }
+
+   [data-aos='fade-down'] {
+     transform: translateY(${AOS_DISTANCE});
    }
 `;
 

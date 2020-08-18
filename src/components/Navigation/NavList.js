@@ -61,11 +61,16 @@ const StyledUl = styled.ul`
          }
          &:before { left: 50% }
          &:after { right: 50% }
-         &:last-of-type { margin-right: 50px }
 
          &:hover {
             &:before, &:after { width: 50% }
          }
+      }
+   }
+
+   @media ${devices.desktop} {
+      li:last-of-type {
+         margin-right: 30px;
       }
    }
 `;

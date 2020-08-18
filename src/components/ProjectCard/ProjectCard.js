@@ -11,7 +11,6 @@ const StyledButton = styled(Button)`
    opacity: 0;
    margin-top: 20px;
    width: 110px;
-
 `;
 
 const StyledH5 = styled(H5)`
@@ -84,7 +83,7 @@ const CardOverlay = styled.div`
 `;
 
 const ProjectCard = (props) => {
-   const {title, description, icons, sourceCode, preview, backgroundImage} = {...props};
+   const {title, description, icons, sourceCode, preview, backgroundImage, aosAnchor, aosDelay} = {...props};
 
 
    const handleClick = () => {
@@ -92,7 +91,12 @@ const ProjectCard = (props) => {
    }
 
    return (
-      <CardContainer image={props.backgroundImage}>
+      <CardContainer
+         image={props.backgroundImage}
+         data-aos="fade-down"
+         data-aos-anchor={aosAnchor}
+         data-aos-delay={aosDelay}
+      >
          <StyledH5>{props.title}</StyledH5>
          <StyledButton onClick={handleClick}>Szczegóły</StyledButton>
          <CardOverlay className="overlay" />
@@ -105,7 +109,6 @@ ProjectCard.defaultProps = {
    description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
    sourceCode: "",
    preview: "",
-   technologies: ["tech 1", "tech 2"],
 }
 
 ProjectCard.propTypes = {

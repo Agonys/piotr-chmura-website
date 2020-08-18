@@ -9,10 +9,6 @@ import { devices } from 'theme';
 
 import logo from 'assets/images/Logo_shadows.svg';
 
-const StyledButton = styled(ButtonFull)`
-   font-weight: 500;
-   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
-`;
 const StyledH4 = styled(H4)`
    color: ${({ theme }) => theme.colors.special};
    font-weight: normal;
@@ -108,12 +104,17 @@ const PageHero = ({ id }) => {
    return (
       <HeroWrapper id={id}>
          <ContentContainer>
-            <TextContainer>
+            <TextContainer data-aos="fade-right">
                <H1>Cześć, jestem Piotr.</H1>
                <StyledH4>Junior Front-end Developer</StyledH4>
-               <StyledButton onClick={() => scrollTo("portfolio")}>Moje projekty</StyledButton>
+               <ButtonFull onClick={() => scrollTo("portfolio")}>Moje projekty</ButtonFull>
             </TextContainer>
-            <img src={logo} alt="Piotr Chmura logo" loading="lazy" />
+            <img
+               src={logo}
+               alt="Piotr Chmura logo"
+               loading="lazy"
+               data-aos="fade-left"
+            />
          </ContentContainer>
       </HeroWrapper>
    )
