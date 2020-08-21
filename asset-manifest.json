@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.js": "/static/js/main.2b1ed8af.chunk.js",
-    "main.js.map": "/static/js/main.2b1ed8af.chunk.js.map",
+    "main.js": "/static/js/main.32037703.chunk.js",
+    "main.js.map": "/static/js/main.32037703.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.2f96981b.js",
     "runtime-main.js.map": "/static/js/runtime-main.2f96981b.js.map",
     "static/css/2.2e5429dc.chunk.css": "/static/css/2.2e5429dc.chunk.css",
-    "static/js/2.ab986f51.chunk.js": "/static/js/2.ab986f51.chunk.js",
-    "static/js/2.ab986f51.chunk.js.map": "/static/js/2.ab986f51.chunk.js.map",
+    "static/js/2.988b9bf3.chunk.js": "/static/js/2.988b9bf3.chunk.js",
+    "static/js/2.988b9bf3.chunk.js.map": "/static/js/2.988b9bf3.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.2b29c8238c6882cad2c78fa90e73b667.js": "/precache-manifest.2b29c8238c6882cad2c78fa90e73b667.js",
+    "precache-manifest.a49732b209cdbfcf99f5323b6b04989e.js": "/precache-manifest.a49732b209cdbfcf99f5323b6b04989e.js",
     "service-worker.js": "/service-worker.js",
     "static/css/2.2e5429dc.chunk.css.map": "/static/css/2.2e5429dc.chunk.css.map",
-    "static/js/2.ab986f51.chunk.js.LICENSE.txt": "/static/js/2.ab986f51.chunk.js.LICENSE.txt",
+    "static/js/2.988b9bf3.chunk.js.LICENSE.txt": "/static/js/2.988b9bf3.chunk.js.LICENSE.txt",
     "static/media/Background_cover.webp": "/static/media/Background_cover.a4887641.webp",
     "static/media/Cleanliness.svg": "/static/media/Cleanliness.a0db1642.svg",
     "static/media/Efficiency.svg": "/static/media/Efficiency.1b670243.svg",
@@ -23,8 +23,6 @@
     "static/media/Logo_shadows.svg": "/static/media/Logo_shadows.a551e79f.svg",
     "static/media/PiotrChmuraImage.jpg": "/static/media/PiotrChmuraImage.472c6322.jpg",
     "static/media/Responsivness.svg": "/static/media/Responsivness.c4938903.svg",
-    "static/media/Rubik-Medium.woff2": "/static/media/Rubik-Medium.7f95c4ca.woff2",
-    "static/media/Rubik-Regular.woff2": "/static/media/Rubik-Regular.a3493958.woff2",
     "static/media/atom.svg": "/static/media/atom.c7a680b0.svg",
     "static/media/bloodstone_calculator.webp": "/static/media/bloodstone_calculator.a71223dc.webp",
     "static/media/bloodstone_wiki.webp": "/static/media/bloodstone_wiki.04238976.webp",
@@ -51,7 +49,7 @@
   "entrypoints": [
     "static/js/runtime-main.2f96981b.js",
     "static/css/2.2e5429dc.chunk.css",
-    "static/js/2.ab986f51.chunk.js",
-    "static/js/main.2b1ed8af.chunk.js"
+    "static/js/2.988b9bf3.chunk.js",
+    "static/js/main.32037703.chunk.js"
   ]
 }

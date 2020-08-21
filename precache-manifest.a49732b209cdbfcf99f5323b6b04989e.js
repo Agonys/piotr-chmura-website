@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f9d0d869902a9e84b9ecc3cf4cff502d",
+    "revision": "09d1fae98fe944ae0d2dfc1b74f9c331",
     "url": "/index.html"
   },
   {
-    "revision": "ba8d9530490560a9475d",
+    "revision": "92af517e9b4689648bc8",
     "url": "/static/css/2.2e5429dc.chunk.css"
   },
   {
-    "revision": "ba8d9530490560a9475d",
-    "url": "/static/js/2.ab986f51.chunk.js"
+    "revision": "92af517e9b4689648bc8",
+    "url": "/static/js/2.988b9bf3.chunk.js"
   },
   {
     "revision": "c64c486544348f10a6d6c716950bc223",
-    "url": "/static/js/2.ab986f51.chunk.js.LICENSE.txt"
+    "url": "/static/js/2.988b9bf3.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "a6fbf3790e9d582ce38d",
-    "url": "/static/js/main.2b1ed8af.chunk.js"
+    "revision": "97cb7db5f52789fd5b22",
+    "url": "/static/js/main.32037703.chunk.js"
   },
   {
     "revision": "7f92f8b3aae2a4a81f49",
@@ -66,14 +66,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "c4938903192c013daf334288aa21cf11",
     "url": "/static/media/Responsivness.c4938903.svg"
-  },
-  {
-    "revision": "7f95c4ca08915c8de675f14f6bf66e31",
-    "url": "/static/media/Rubik-Medium.7f95c4ca.woff2"
-  },
-  {
-    "revision": "a3493958b5bb84f82939a9c75e461e6e",
-    "url": "/static/media/Rubik-Regular.a3493958.woff2"
   },
   {
     "revision": "c7a680b0372440884b9a680371e7e3da",
