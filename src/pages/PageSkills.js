@@ -1,7 +1,7 @@
 import React from 'react';
 import SectionTemplate from 'templates/SectionTemplate';
 import IconsGallery from 'components/IconsGallery/IconsGallery';
-import { backgrounds } from 'theme';
+import { colors } from 'theme';
 
 const PageSkills = () => {
    const AOS_ANCHOR = "paragraph__aosAnchor";
@@ -10,7 +10,7 @@ const PageSkills = () => {
       <SectionTemplate
          id="skills"
          heading="Umiejętności"
-         backgroundColor={backgrounds.dark}
+         backgroundColor={colors.black}
       >
          <p data-aos="fade-down" className={AOS_ANCHOR}>W swoich projektach wykorzystuję:</p>
          <IconsGallery aosAnchor={`.${AOS_ANCHOR}`} />

@@ -16,13 +16,13 @@ const StyledH3 = styled(H3)`
       display: block;
       width: 60%;
       height: 6px;
-      background-color: ${({ theme }) => theme.backgrounds.special};
+      background-color: ${({ theme }) => theme.colors.special};
    }
 `;
 
 const ContactContainer = styled.div`
    width: 100%;
-   background-color: ${({ theme }) => theme.backgrounds.dark};
+   background-color: ${({ theme }) => theme.colors.black};
    display: flex;
    flex-direction: column;
 
@@ -68,7 +68,7 @@ const FormContainer = styled.div`
          width: 100%;
          height: 50px;
          padding: 0 15px;
-         background-color: ${({ theme }) => theme.backgrounds.light};
+         background-color: ${({ theme }) => theme.colors.grey};
          border: 0;
          border-radius: 3px;
          caret-color: ${({ theme }) => theme.colors.white};
@@ -122,7 +122,7 @@ const FormContainer = styled.div`
       cursor: pointer;
 
       &:active, &:hover {
-         background-color: ${({ theme }) => theme.backgrounds.special};
+         background-color: ${({ theme }) => theme.colors.special};
          color: ${({ theme }) => theme.colors.black};
       }
    }

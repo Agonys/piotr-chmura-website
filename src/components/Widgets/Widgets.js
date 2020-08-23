@@ -27,9 +27,35 @@ const WidgetsContainer = styled.div`
 const Widgets = ({ color }) => {
    return (
       <WidgetsContainer>
-         <a href="https://www.linkedin.com/in/piotr-chmura-2b150a1ab/" target="_blank" rel="noopener noreferrer"><img src={linkedinIcon} alt="LinkedIn icon" /></a>
-         <a href="https://github.com/Agonys" target="_blank" rel="noopener noreferrer"><img src={githubIcon} alt="Github icon" /></a>
-         <a href="https://www.facebook.com/Piotr.Agonys.Chmura/" target="_blank" rel="noopener noreferrer"><img src={facebookIcon} alt="Facebook icon" /></a>
+         <a
+            href="https://www.linkedin.com/in/piotr-chmura-2b150a1ab/"
+            target="_blank"
+            rel="noopener noreferrer">
+            <img
+               src={linkedinIcon}
+               alt="LinkedIn icon"
+               loading="lazy" />
+         </a>
+
+         <a
+            href="https://github.com/Agonys"
+            target="_blank"
+            rel="noopener noreferrer">
+            <img
+               src={githubIcon}
+               alt="Github icon"
+               loading="lazy" />
+         </a>
+
+         <a
+            href="https://www.facebook.com/Piotr.Agonys.Chmura/"
+            target="_blank" 
+            rel="noopener noreferrer">
+            <img
+               src={facebookIcon}
+               alt="Facebook icon"
+               loading="lazy" />
+         </a>
       </WidgetsContainer>
    )
 }

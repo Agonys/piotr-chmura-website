@@ -35,6 +35,7 @@ const Navigation = () => {
             src={logo}
             alt="Logo"
             onClick={() => scrollTo("home")}
+            loading="lazy"
          />
          <Hamburger />
       </StyledHeader>

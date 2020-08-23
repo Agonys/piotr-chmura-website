@@ -12,7 +12,7 @@ const ButtonHalf = styled.button`
 
    &:hover {
       color: ${({ theme }) => theme.colors.black};
-      background-color: ${({ theme }) => theme.backgrounds.special};
+      background-color: ${({ theme }) => theme.colors.special};
    }
 `;
 

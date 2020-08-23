@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Button from 'components/Buttons/ButtonFull';
 import { devices } from 'theme';
+import PropTypes from 'prop-types';
 
 const StyledButton = styled(Button)`
    max-width: 160px;
@@ -13,7 +14,7 @@ const StyledButton = styled(Button)`
 
 const StyledHr = styled.hr`
    width: 100%;
-   border: 1px solid ${({ theme }) => theme.backgrounds.dark};
+   border: 1px solid ${({ theme }) => theme.colors.black};
 `;
 
 const StyledImage = styled.div`
@@ -27,7 +28,7 @@ const StyledImage = styled.div`
 const StyledLine = styled.div`
    width: 100%;
    height: 4px;
-   background-color: ${({ theme }) => theme.backgrounds.special};
+   background-color: ${({ theme }) => theme.colors.special};
 `;
 
 const ModalContainer = styled.div`
@@ -40,7 +41,7 @@ const ModalContainer = styled.div`
    transform: ${({ isOpen }) => isOpen ? 'scale(1)' : 'scale(0.8)'};
    opacity: ${({ isOpen }) => isOpen ? 1 : 0};
 
-   background-color: ${({ theme }) => theme.backgrounds.light};
+   background-color: ${({ theme }) => theme.colors.grey};
    transition: ${({ theme }) => theme.transitions.ease};
 
    @media ${devices.tablet} {
@@ -173,6 +174,7 @@ const Modal = ({ isModalOpen, modalData, closeModal }) => {
    const { title, description, icons, sourceCode, preview, backgroundImage } = {...modalData};
 
    let iconsList;
+   console.log(icons);
    if(icons)
       iconsList = icons.map((icon, index) => {
          return <img key={index} src={icon} alt="icon" />
@@ -208,6 +210,15 @@ const Modal = ({ isModalOpen, modalData, closeModal }) => {
       <DarkOverlay isOpen={isModalOpen} />
       </>
    )
+}
+Modal.defaultProps = {
+   isModalOpen: false,
+}
+
+Modal.propTypes = {
+   isModalOpen: PropTypes.bool.isRequired,
+   modalData: PropTypes.object.isRequired,
+   closeModal: PropTypes.func.isRequired,
 }
 
 export default Modal;

@@ -1,7 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
 import { theme } from 'theme';
-import rubikMedium from 'assets/fonts/Rubik-Medium.woff2';
-import rubikRegular from 'assets/fonts/Rubik-Regular.woff2';
 
 const AOS_DISTANCE = "200px";
 
@@ -21,11 +19,11 @@ const GlobalStyle = createGlobalStyle`
       padding: 0;
       font-family: ${theme.fonts.primary}, sans-serif;
       color: ${theme.colors.white};
-      background-color: ${theme.backgrounds.light};
+      background-color: ${theme.colors.grey};
 
       &::-webkit-scrollbar {
          width: 12px;
-         background-color: ${theme.backgrounds.light};
+         background-color: ${theme.colors.grey};
          border: 1px solid ${theme.colors.black};
       }
 

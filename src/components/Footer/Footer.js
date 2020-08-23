@@ -10,7 +10,7 @@ const StyledFooter = styled.footer`
    letter-spacing: 0.5px;
    text-transform: uppercase;
    text-align: center;
-   background-color: ${({ theme }) => theme.backgrounds.dark};
+   background-color: ${({ theme }) => theme.colors.black};
 
    span {
       color: ${({ theme }) => theme.colors.special};

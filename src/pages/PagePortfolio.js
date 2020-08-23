@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import SectionTemplate from 'templates/SectionTemplate';
 import ProjectCard from 'components/ProjectCard/ProjectCard';
 import icons from 'components/IconsGallery/icons';
-import { backgrounds, devices } from 'theme';
+import { colors, devices } from 'theme';
 
 import backgroundCover from 'assets/images/Background_cover.webp';
 import bloodstoneCalculator from 'assets/images/projects/bloodstone_calculator.webp';
@@ -33,12 +33,12 @@ const ProjectContainer = styled.div`
 `;
 
 const PagePortfolio = ({ openModal }) => {
-   const AOS_ANCHOR = "projectContainer__aosAnchor";
+   const AOS_ANCHOR = "projectCard__aosAnchor";
 
    return (
       <SectionTemplate
          id="portfolio"
-         backgroundColor={backgrounds.special}
+         backgroundColor={colors.special}
          backgroundImage={backgroundCover}
          heading="Portfolio"
          isColorReversed
@@ -47,7 +47,7 @@ const PagePortfolio = ({ openModal }) => {
             <ProjectCard
                backgroundImage={bloodstoneDiscord}
                title="Bloodstone Looter"
-               description='aplikacja stworzona dla społeczności Bloodstone Polska pozwalający na analizowanie danych z gry "Bloodstone: The Ancient Curse" dostarczonych przez graczy. Całość napisana w Node.js, Discord.js, MySQL oraz hostowana na Google Cloud Platform.'
+               description='Bot na platformie Discord do gry "Bloodstone: The Ancient Curse". Pozwala on na analizowanie danych z gry dostarczonych przez graczy z możliwością ich wglądu. Całość oparta jest na Node.js, Discord.js oraz bazie danych MySQL. Dla całodobowego działania aplikacja została postawiona na Google Cloud Platform.'
                sourceCode="https://github.com/Agonys/dc_bloodstone_bot"
                icons={[ icons["Node.js"], icons["MySQL"] ]}
                openModal={openModal}
@@ -58,7 +58,7 @@ const PagePortfolio = ({ openModal }) => {
             <ProjectCard
                backgroundImage={willaAnna}
                title="Leśniczówka Willa Anna"
-               description='Oficjalna strona "Leśniczówka Willa Anna" z lokalizacją w Szklarskiej porębie. Strona zaprojektowana w celu przedstawienia oferty apartamentów wraz z możliwością ich rezerwacji. Strona oparta o Zend Framework przygotowana na stażu w firmie LEMONPIXEL.'
+               description='Oficjalna strona "Leśniczówka Willa Anna" z lokalizacją w Szklarskiej porębie. Strona zaprojektowana w celu przedstawienia oferty apartamentów wraz z możliwością ich rezerwacji. Responsywna strona oparta o Zend Framework i silnik rezerwacji online HOTRES przygotowana na stażu w firmie LEMONPIXEL.'
                sourceCode=""
                preview="https://www.willaanna.pl/"
                icons={[ icons["PHP"], icons["JavaScript"] ]}
@@ -70,7 +70,7 @@ const PagePortfolio = ({ openModal }) => {
             <ProjectCard
                backgroundImage={deftoapartments}
                title="Deftoapartments"
-               description="Oficjalna strona apartamentów Defto z lokalizacją w Katowicach i Tychach. Strona oparta o Zend Framework ma na celu przedstawić ofertę apartamentów, ich szczegółowe informację, opis firmy oraz możliwość zarezerwowania terminu w wybranym apartamencie. Została ona przygotowana na stażu w firmie LEMONPIXEL."
+               description="Oficjalna strona apartamentów Defto z lokalizacją w Katowicach i Tychach. Responsywna strona oparta o Zend Framework i silnik rezerwacji online HOTRES ma na celu przedstawić ofertę apartamentów, ich szczegółowe informację, opis firmy oraz możliwość zarezerwowania terminu w wybranym apartamencie. Strona przygotowana na stażu w firmie LEMONPIXEL."
                sourceCode=""
                preview="https://www.deftoapartments.com/"
                icons={[ icons["PHP"], icons["JavaScript"] ]}
@@ -82,7 +82,7 @@ const PagePortfolio = ({ openModal }) => {
             <ProjectCard
                backgroundImage={bloodstoneWiki}
                title="Bloodstone Polska Wiki"
-               description='Wikipedia do gry "Bloodstone: The Ancient Curse" w języku polskim. Stworzona przez zespół edytorów w celu ułatwienia rozgrywki graczom z Polski, jednak korzystają z niej ludzie z całej społeczności gry. Obecnie projekt przestał być wspierany i rozwijany.'
+               description='Polska, ogólnodostępna Wikipedia do gry "Bloodstone: The Ancient Curse". Strona oparta na silniku Mediawiki i PHP, lecz bez responsywności z powodu funkcjonowania silnika. Funkcjonuje od kwietnia 2019 roku. Stworzona przez graczy dla graczy w celu gromadzenia danych o grze oraz ułatwienia rozgrywki graczom. Witryna z prawie 1 milionem wyświetleń, aktualnie rozwój został zawieszony.'
                sourceCode=""
                preview="https://bloodstone.com.pl/"
                icons={[ icons["PHP"], icons["JavaScript"] ]}
@@ -94,7 +94,7 @@ const PagePortfolio = ({ openModal }) => {
             <ProjectCard
                backgroundImage={bloodstoneCalculator}
                title="Bloodstone Skill calculator"
-               description='Aplikacja pozwalająca na budowanie własnych zestawów umiejętności w grze "Bloodstone: The Ancient Curse". Zbudowana na prostym gridzie, dostosowana do różnych rozdzielczości (wersja mobilna nie została jeszcze ukończona).'
+               description='Aplikacja do gry "Bloodstone: The Ancient Curse" pozwalająca na wybór własnych zestawów umiejętności. Zbudowana na prostym gridzie, dostosowana do różnych rozdzielczości, jednakże jeszcze bez wsparcia mobilnego (trwają prace nad wersją w React.js). Planowane jest dodanie zapisu zestawów do linku w celu udostępniania ich między graczami.'
                sourceCode="https://github.com/Agonys/spell_calc"
                preview="https://bloodstone.com.pl/calculator/"
                icons={[ icons["jQuery"], icons["Sass"], icons["Figma"] ]}

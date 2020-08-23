@@ -82,33 +82,56 @@ const CardOverlay = styled.div`
    z-index: -1;
 `;
 
-const ProjectCard = (props) => {
-   const {title, description, icons, sourceCode, preview, backgroundImage, aosAnchor, aosDelay} = {...props};
-
-
-   const handleClick = () => {
-      props.openModal({title, description, icons, sourceCode, preview, backgroundImage});
+export default class ProjectCard extends React.Component {
+   constructor(props) {
+      super(props);
+      this.state = {
+         image: '',
+      };
+      this.handleClick = this.handleClick.bind(this);
    }
 
-   return (
-      <CardContainer
-         image={props.backgroundImage}
-         data-aos="fade-down"
-         data-aos-anchor={aosAnchor}
-         data-aos-delay={aosDelay}
-      >
-         <StyledH5>{props.title}</StyledH5>
-         <StyledButton onClick={handleClick}>Szczegóły</StyledButton>
-         <CardOverlay className="overlay" />
-      </CardContainer>
-   )
+   componentDidMount() {
+      window.addEventListener("load", () => {
+         const backgroundImage = this.props.backgroundImage;
+         this.setState({ image: backgroundImage });
+      });
+   }
+
+   handleClick() {
+      const {title, description, icons, sourceCode, preview, backgroundImage, openModal} = {...this.props};
+
+      openModal({ title, description, icons, sourceCode, preview, backgroundImage });
+   }
+
+   render() {
+      const {title, aosAnchor, aosDelay} = {...this.props};
+      const backgroundImage = this.state.image;
+      return (
+         <>
+            { backgroundImage && <CardContainer
+               image={backgroundImage}
+               data-aos="fade-down"
+               data-aos-anchor={aosAnchor}
+               data-aos-delay={aosDelay}
+            >
+               <StyledH5>{title}</StyledH5>
+               <StyledButton onClick={this.handleClick}>Szczegóły</StyledButton>
+               <CardOverlay className="overlay" />
+            </CardContainer> }
+         </>
+      )
+   }
 }
 
 ProjectCard.defaultProps = {
    title: "Tytuł projektu",
-   description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+   description: "Krótki opis danego projektu.",
    sourceCode: "",
    preview: "",
+   backgroundImage: "",
+   aosAnchor: "projectCard__aosAnchor",
+   aosDelay: 100,
 }
 
 ProjectCard.propTypes = {
@@ -118,7 +141,7 @@ ProjectCard.propTypes = {
    sourceCode: PropTypes.string,
    preview: PropTypes.string,
    backgroundImage: PropTypes.string,
-
+   openModal: PropTypes.func.isRequired,
+   aosAnchor: PropTypes.string.isRequired,
+   aosDelay: PropTypes.number.isRequired,
 }
-
-export default ProjectCard;

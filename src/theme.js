@@ -1,4 +1,4 @@
-const sizes = {
+export const sizes = {
    desktop: "1440px",
    laptopM: "1200px",
    laptop: "1024px",
@@ -18,17 +18,11 @@ export const colors = {
    white: '#FFFFFF',
    special: '#FFA800',
    black: '#191A1D',
-}
-
-export const backgrounds = {
-   light: '#303030',
-   dark: '#191A1D',
-   special: colors.special,
+   grey: '#303030',
 }
 
 export const theme = {
    colors: colors,
-   backgrounds: backgrounds,
    fonts: {
       primary: "Segoe UI",
       secondary: "Rubik",

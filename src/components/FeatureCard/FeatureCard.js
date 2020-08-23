@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import H5 from 'components/Text/H5';
 import PropTypes from 'prop-types';
-import { devices, backgrounds } from 'theme';
+import { devices, colors } from 'theme';
 
 const CardContainer = styled.div`
    width: 100%;
@@ -24,7 +24,7 @@ const CardBackground = styled.div`
    top: 50%;
    transform: translateY(-50%);
    z-index: -1;
-   background: ${({ theme }) => theme.backgrounds.special};
+   background: ${({ theme }) => theme.colors.special};
 `;
 
 const CardBox = styled.div`
@@ -38,7 +38,7 @@ const CardBox = styled.div`
    height: 100%;
    margin: 0 auto;
    padding: 0 20px;
-   background: ${backgrounds.dark};
+   background: ${colors.black};
    box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.6);
 
    p {
@@ -59,7 +59,7 @@ const FeatureCard = ({ icon, heading, description, data_aos, data_aos_delay }) =
       data-aos-delay={data_aos_delay}
    >
       <CardBox>
-         <CardIcon src={icon} alt="icon"/>
+         <CardIcon src={icon} alt="icon" loading="lazy" />
          <H5>{heading}</H5>
          <p>{description}</p>
       </CardBox>
