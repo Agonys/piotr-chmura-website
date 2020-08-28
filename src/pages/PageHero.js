@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import heroBackground from 'assets/images/HeroBackground.png';
 import ButtonFull from 'components/Buttons/ButtonFull';
 import H4 from 'components/Text/H4';
-import PropTypes from 'prop-types';
 import scrollTo from 'utils/scrollTo';
 import { devices } from 'theme';
 
@@ -100,9 +99,9 @@ const TextContainer = styled.div`
 `;
 
 
-const PageHero = ({ id }) => {
+const PageHero = React.memo(() => {
    return (
-      <HeroWrapper id={id}>
+      <HeroWrapper id="home">
          <ContentContainer>
             <TextContainer data-aos="fade-right">
                <H1>Cześć, jestem Piotr.</H1>
@@ -118,15 +117,6 @@ const PageHero = ({ id }) => {
          </ContentContainer>
       </HeroWrapper>
    )
-}
-
-PageHero.defaultProps = {
-   id: 'home'
-}
-
-PageHero.propTypes = {
-   id: PropTypes.string.isRequired
-}
-
+});
 
 export default PageHero;

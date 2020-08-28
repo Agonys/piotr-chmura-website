@@ -21,7 +21,6 @@ const WidgetsContainer = styled.div`
          margin-right: 0;
       }
    }
-
 `;
 
 const Widgets = ({ color }) => {
@@ -49,7 +48,7 @@ const Widgets = ({ color }) => {
 
          <a
             href="https://www.facebook.com/Piotr.Agonys.Chmura/"
-            target="_blank" 
+            target="_blank"
             rel="noopener noreferrer">
             <img
                src={facebookIcon}

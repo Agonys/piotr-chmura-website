@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import H5 from 'components/Text/H5';
@@ -60,13 +60,8 @@ const CardContainer = styled.div`
       .overlay { opacity: 1 }
    }
 
-   @media ${devices.tablet} {
-      margin: 0;
-   }
-
-   @media ${devices.laptopM} {
-      height: 240px;
-   }
+   @media ${devices.tablet} { margin: 0 }
+   @media ${devices.laptopM} { height: 240px }
 `;
 
 const CardOverlay = styled.div`
@@ -82,47 +77,29 @@ const CardOverlay = styled.div`
    z-index: -1;
 `;
 
-export default class ProjectCard extends React.Component {
-   constructor(props) {
-      super(props);
-      this.state = {
-         image: '',
-      };
-      this.handleClick = this.handleClick.bind(this);
-   }
+const ProjectCard = (props) => {
+   const {title, aosAnchor, aosDelay, backgroundImage} = {...props};
 
-   componentDidMount() {
-      window.addEventListener("load", () => {
-         const backgroundImage = this.props.backgroundImage;
-         this.setState({ image: backgroundImage });
-      });
-   }
-
-   handleClick() {
-      const {title, description, icons, sourceCode, preview, backgroundImage, openModal} = {...this.props};
-
+   const handleClick = () => {
+      const {title, description, icons, sourceCode, preview, backgroundImage, openModal} = {...props};
       openModal({ title, description, icons, sourceCode, preview, backgroundImage });
    }
 
-   render() {
-      const {title, aosAnchor, aosDelay} = {...this.props};
-      const backgroundImage = this.state.image;
-      return (
-         <>
-            { backgroundImage && <CardContainer
-               image={backgroundImage}
-               data-aos="fade-down"
-               data-aos-anchor={aosAnchor}
-               data-aos-delay={aosDelay}
-            >
-               <StyledH5>{title}</StyledH5>
-               <StyledButton onClick={this.handleClick}>Szczegóły</StyledButton>
-               <CardOverlay className="overlay" />
-            </CardContainer> }
-         </>
-      )
-   }
+   return (
+      <CardContainer
+         image={backgroundImage}
+         data-aos="fade-down"
+         data-aos-anchor={aosAnchor}
+         data-aos-delay={aosDelay}
+      >
+         <StyledH5>{title}</StyledH5>
+         <StyledButton onClick={handleClick}>Szczegóły</StyledButton>
+         <CardOverlay className="overlay" />
+      </CardContainer>
+   )
 }
+
+export default ProjectCard;
 
 ProjectCard.defaultProps = {
    title: "Tytuł projektu",
@@ -140,7 +117,7 @@ ProjectCard.propTypes = {
    icons: PropTypes.array,
    sourceCode: PropTypes.string,
    preview: PropTypes.string,
-   backgroundImage: PropTypes.string,
+   backgroundImage: PropTypes.string.isRequired,
    openModal: PropTypes.func.isRequired,
    aosAnchor: PropTypes.string.isRequired,
    aosDelay: PropTypes.number.isRequired,

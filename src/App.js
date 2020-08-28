@@ -25,7 +25,11 @@ export default class App extends React.Component {
       super(props);
       this.state = {
          isModalOpen: false,
-         modalData: {},
+         modalData: {
+            title: "Tytuł projektu",
+            description: "Opis projektu",
+            backgroundImage: "",
+         },
       }
       this.openModal = this.openModal.bind(this);
       this.closeModal = this.closeModal.bind(this);
@@ -43,12 +47,27 @@ export default class App extends React.Component {
    }
 
    componentDidMount() {
-      AOS.init({
-         offset: 300,
-         duration: 800,
-         once: true,
-         easing: 'ease-out-cubic',
-      });
+      const body = document.querySelector("body");
+      const root = document.querySelector("#root");
+      const preloader = document.querySelector(".preloader");
+
+      const removeAos = () => {
+         root.style.opacity = "1";
+         preloader.style.opacity = "0";
+         body.style.overflowY = "visible";
+         setTimeout(() => { preloader.style.display = "none" }, 500);
+
+         AOS.init({
+            offset: 300,
+            duration: 800,
+            once: true,
+            easing: 'ease-out-cubic',
+         });
+
+         window.removeEventListener("load", removeAos);
+      }
+
+      window.addEventListener("load", removeAos);
    }
 
    componentDidUpdate(_, prevState) {

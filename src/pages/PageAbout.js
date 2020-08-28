@@ -10,7 +10,6 @@ import cleanlinessIcon from 'assets/images/Cleanliness.svg';
 import responsivnessIcon from 'assets/images/Responsivness.svg';
 import { devices } from 'theme';
 
-
 const P = styled.p`
    padding-bottom: 40px;
 `;
@@ -102,7 +101,7 @@ const FeatureCardContainer = styled.div`
    }
 `;
 
-const PageAbout = () => {
+const PageAbout = React.memo(() => {
    return (
       <SectionTemplate
       id="about"
@@ -151,6 +150,6 @@ const PageAbout = () => {
       </FeatureCardContainer>
       </SectionTemplate>
    )
-}
+});
 
 export default PageAbout;

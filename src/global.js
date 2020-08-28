@@ -11,10 +11,13 @@ const GlobalStyle = createGlobalStyle`
    html {
       font-size: 10px;
       scroll-behavior: smooth;
+      scrollbar-color: ${theme.colors.special} ${theme.colors.grey};
+      scrollbar-width: 12px;
    }
 
    body {
-      overflow-x: hidden;
+      background-color: ${theme.colors.grey};
+      overflow: hidden;
       margin: 0;
       padding: 0;
       font-family: ${theme.fonts.primary}, sans-serif;
@@ -70,6 +73,48 @@ const GlobalStyle = createGlobalStyle`
 
    [data-aos='fade-down'] {
      transform: translateY(${AOS_DISTANCE});
+   }
+
+
+   //CSS preloader
+   .preloader {
+      display: block;
+      width: 80px;
+      height: 80px;
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      transition: ${theme.transitions.ease};
+      opacity: 1;
+   }
+
+   .preloader:after {
+      content: "";
+      display: block;
+      width: 96px;
+      height: 96px;
+      margin: 8px;
+      border-radius: 50%;
+      border: 10px solid ${theme.colors.special};
+      border-color: ${theme.colors.special} transparent ${theme.colors.special} transparent;
+      animation: preloader 1.2s linear infinite;
+   }
+
+   @keyframes preloader {
+      0% {
+         transform: rotate(0deg);
+      }
+      100% {
+         transform: rotate(360deg);
+      }
+   }
+
+   #root {
+      opacity: 0;
+      transition: ${theme.transitions.ease};
    }
 `;
 

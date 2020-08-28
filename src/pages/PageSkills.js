@@ -3,7 +3,7 @@ import SectionTemplate from 'templates/SectionTemplate';
 import IconsGallery from 'components/IconsGallery/IconsGallery';
 import { colors } from 'theme';
 
-const PageSkills = () => {
+const PageSkills = React.memo(() => {
    const AOS_ANCHOR = "paragraph__aosAnchor";
 
    return (
@@ -16,5 +16,6 @@ const PageSkills = () => {
          <IconsGallery aosAnchor={`.${AOS_ANCHOR}`} />
       </SectionTemplate>
    )
-}
+});
+
 export default PageSkills;

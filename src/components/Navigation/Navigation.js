@@ -25,10 +25,7 @@ const StyledHeader = styled.header`
    z-index: 10;
 `;
 
-const Navigation = () => {
-
-
-
+const Navigation = React.memo(() => {
    return (
       <StyledHeader id="navigation">
          <StyledLogo
@@ -40,6 +37,6 @@ const Navigation = () => {
          <Hamburger />
       </StyledHeader>
    )
-}
+});
 
 export default Navigation;

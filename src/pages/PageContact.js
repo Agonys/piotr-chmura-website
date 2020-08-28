@@ -137,7 +137,7 @@ const MoreInfoContainer = styled.div`
    p { padding-top: 10px; }
 `;
 
-const PageContact = () => {
+const PageContact = React.memo(() => {
    return (
       <SectionTemplate
          id="contact"
@@ -179,5 +179,5 @@ const PageContact = () => {
          </ContactContainer>
       </SectionTemplate>
    )
-}
+});
 export default PageContact;

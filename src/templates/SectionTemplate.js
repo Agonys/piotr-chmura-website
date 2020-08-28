@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import H2 from 'components/Text/H2';
 import { devices } from 'theme';
 
-
 const SectionContainer = styled.section`
    padding: 70px 20px;
    background-color: ${({ backgroundColor }) => backgroundColor};
@@ -21,7 +20,7 @@ const SectionContainer = styled.section`
 
 const SectionBackground = styled.div`
    display: block;
-   background-image: url(${({ backgroundImage }) => backgroundImage});
+   background-image: url(${({ backgroundImage }) => backgroundImage ? backgroundImage : null});
    opacity: 0.4;
    position: absolute;
    top: 0;
@@ -59,13 +58,14 @@ const SectionTemplate = ({ id, children, backgroundColor, backgroundImage, isCol
          </InformationRow>
       </SectionContainer>
    )
-}
+};
 
 SectionTemplate.defaultProps = {
    backgroundColor: 'transparent',
+   backgroundImage: '',
    heading: 'Nagłówek',
    isColorReversed: false,
-}
+};
 
 SectionTemplate.propTypes = {
    id: PropTypes.string.isRequired,
@@ -73,6 +73,6 @@ SectionTemplate.propTypes = {
    backgroundColor: PropTypes.string,
    backgroundImage: PropTypes.string,
    isColorReversed: PropTypes.bool,
-}
+};
 
 export default SectionTemplate;

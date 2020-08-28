@@ -19,12 +19,12 @@ const StyledFooter = styled.footer`
    @media ${devices.mobileL} { font-size: 1.1rem }
 `;
 
-const Footer = () => {
+const Footer = React.memo(() => {
    const year = new Date().getFullYear();
 
    return (
       <StyledFooter><span>Piotr Chmura</span> © {year} wszelkie prawa zastrzeżone</StyledFooter>
    )
-}
+});
 
 export default Footer;
